@@ -168,25 +168,25 @@ function App() {
         ))}
       </div> */}
 
-      <table className="table-fixed border-[#696969] min-w-[600px]">
+      <table className="table-fixed border-[#696969] min-w-[600px] border-separate border-spacing-0">
         <thead>
           <tr className="">
-            <th className="border-b border-[#000000] p-2 sticky top-0 bg-white z-20 left-0 text-left font-semibold">
+            <th className="border-b border-[#0B1424] p-2 sticky top-0 bg-white z-20 left-0 text-left font-semibold">
               Last Update: June 14th, 10:00 AM
             </th>
-            <th className="border-b border-[#000000] p-2 sticky top-0 z-10 bg-white font-light">
+            <th className="border-b border-[#0B1424] p-2 sticky top-0 z-10 bg-white font-light">
               Jun 12th
             </th>
-            <th className="border-b border-[#000000] p-2 sticky top-0 z-10 bg-white font-light">
+            <th className="border-b border-[#0B1424] p-2 sticky top-0 z-10 bg-white font-light">
               Jun 13th
             </th>
-            <th className="border-b border-[#000000] p-2 sticky top-0 z-10 bg-white font-light">
+            <th className="border-b border-[#0B1424] p-2 sticky top-0 z-10 bg-white font-light">
               Current
             </th>
-            <th className="border-b border-[#000000] p-2 sticky top-0 z-10 bg-white font-light">
+            <th className="border-b border-[#0B1424] p-2 sticky top-0 z-10 bg-white font-light">
               Jun 15th
             </th>
-            <th className="border-b border-[#000000] p-2 sticky top-0 z-10 bg-white font-light">
+            <th className="border-b border-[#0B1424] p-2 sticky top-0 z-10 bg-white font-light">
               Jun 16th
             </th>
           </tr>
@@ -201,7 +201,12 @@ function App() {
                 </div>
               </th>
               {values.map((value, index) => (
-                <td key={index} className="border p-2 font-semibold">
+                <td
+                  key={index}
+                  className={`border p-2 font-semibold ${
+                    index === 2 ? "bg-[#e4f6fa]" : ""
+                  } ${index > 2 ? "bg-[#f3f3f3]" : ""}`}
+                >
                   {value}
                 </td>
               ))}
