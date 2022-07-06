@@ -128,7 +128,13 @@ const Table = ({
                   : ""}
               `}
             >
-              <div className="flex items-center gap-x-3">
+              <div
+                className={css`
+                  display: flex;
+                  align-items: center;
+                  column-gap: 0.75rem;
+                `}
+              >
                 <img src={drag} />
                 {dataValue.name}
               </div>
