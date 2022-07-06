@@ -1,11 +1,12 @@
 import drag from "../drag.svg";
 import { css } from "@emotion/css";
 
-type TableProps = Readonly<{
+export type TableProps = Readonly<{
   data: any;
   isHeaderSticky?: boolean;
   isFirstColSticky?: boolean;
   isTableFixed?: boolean;
+  isDraggable?: boolean;
 }>;
 
 const Table = ({
@@ -13,12 +14,12 @@ const Table = ({
   isHeaderSticky = false,
   isFirstColSticky = false,
   isTableFixed = false,
+  isDraggable = false,
 }: TableProps) => {
   return (
     <table
       className={css`
         min-width: 600px;
-        border: 1px solid #696969;
         border-collapse: separate;
         border-spacing: 0px 0px;
         ${isTableFixed ? "table-layout: fixed;" : ""}
@@ -28,10 +29,10 @@ const Table = ({
         <tr>
           <th
             className={css`
-              background-color: #ffffff;
+              border-bottom: 1px solid #0b1424;
               text-align: left;
               font-weight: 600;
-              border-bottom: 1px solid #0b1424;
+              background-color: #ffffff;
               padding: 12px;
               ${isHeaderSticky && isFirstColSticky
                 ? "position: sticky; top: 0px; left: 0; z-index: 20;"
@@ -108,17 +109,14 @@ const Table = ({
         {data.map((dataValue: any, index: number) => (
           <tr
             key={dataValue.id}
-            draggable
+            draggable={isDraggable}
             className={css`
               background-color: #ffffff;
             `}
           >
             <th
-              // className={`border p-2 bg-white text-left font-light ${
-              //   isFirstColSticky ? "sticky z-10 left-0" : ""
-              // }`}
               className={css`
-                border: 1px solid rgb(148 163 184);
+                border: 1px solid rgb(203 213 225);
                 padding: 12px;
                 background-color: #ffffff;
                 text-align: left;
@@ -135,7 +133,7 @@ const Table = ({
                   column-gap: 0.75rem;
                 `}
               >
-                <img src={drag} />
+                {isDraggable && <img src={drag} />}
                 {dataValue.name}
               </div>
             </th>
@@ -143,9 +141,10 @@ const Table = ({
               <td
                 key={index}
                 className={css`
-                  border: 1px solid rgb(148 163 184);
+                  border: 1px solid rgb(203 213 225);
                   padding: 12px;
                   font-weight: 600;
+                  text-align: center;
                   ${index === 2 ? "background-color: #e4f6fa" : ""} ${index > 2
                     ? "background-color: #f3f3f3"
                     : ""}

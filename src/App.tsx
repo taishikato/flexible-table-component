@@ -94,14 +94,17 @@ const tableDataRaw = [
   },
 ];
 
-const isHeaderSticky = true;
-const isFirstColSticky = true;
-
 function App() {
   const [tableData, setTableData] = useState(tableDataRaw);
 
   return (
-    <Table data={tableData} isFirstColSticky isHeaderSticky isTableFixed />
+    <Table
+      data={tableData}
+      isFirstColSticky
+      isHeaderSticky
+      isTableFixed
+      isDraggable
+    />
     // <table className="table-fixed border-[#696969] min-w-[600px] border-separate border-spacing-0">
     //   <thead>
     //     <tr>
