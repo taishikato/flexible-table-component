@@ -1,7 +1,7 @@
 /**
  * Took this from https://github.com/granteagon/move/blob/master/src/index.js
  */
-export const swap = (array: unknown[], moveIndex: number, toIndex: number) => {
+export const swap = <T>(array: T[], moveIndex: number, toIndex: number) => {
   /* #move - Moves an array item from one position in an array to another.
      Note: This is a pure function so a new array will be returned, instead
      of altering the array argument.

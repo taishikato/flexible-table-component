@@ -2,7 +2,6 @@ import { memo, useRef } from "react";
 import { css } from "@emotion/css";
 import HeaderTh from "./HeaderTh";
 import FirstTh from "./FirstTh";
-import "./Table.css";
 import { useSprings } from "@react-spring/web";
 import { useDrag } from "@use-gesture/react";
 import { swap } from "../utils/swap";
@@ -12,15 +11,21 @@ import DraggableTr from "./DraggableTr";
 const itemHeight = 46;
 
 const fn =
-  (
-    order: any,
-    down?: any,
-    originalIndex?: number,
-    curIndex: number,
-    y: number
-  ) =>
+  ({
+    order,
+    down,
+    originalIndex,
+    curIndex,
+    y,
+  }: {
+    order: number[];
+    down?: any;
+    originalIndex?: number;
+    curIndex?: number;
+    y?: number;
+  }) =>
   (index: number) =>
-    down && index === originalIndex
+    down && curIndex && y && index === originalIndex
       ? /*
       No need to transition the following properties:
       - z-index, the elevation of the item related to the root of the view; it should pop straight up to 1, from 0.
@@ -61,7 +66,10 @@ const Table = ({
   const order = useRef(data.map((_: any, index: number) => index));
 
   // @ts-ignore
-  const [springs, api] = useSprings(order.current.length, fn(order.current));
+  const [springs, api] = useSprings(
+    order.current.length,
+    fn({ order: order.current })
+  );
 
   const bind = useDrag(
     ({ args: [originalIndex], down = false, movement: [, y] }) => {
@@ -71,12 +79,12 @@ const Table = ({
         0,
         data.length - 1
       );
-      const newOrder = swap(order.current, curIndex, curRow);
+      const newOrder = swap<number>(order.current, curIndex, curRow);
       /*
       Curry all variables needed for the truthy clause of the ternary expression from fn,
       so that new objects are fed to the springs without triggering a re-render.
     */
-      api.start(fn(newOrder, down, originalIndex, curIndex, y));
+      api.start(fn({ order: newOrder, down, originalIndex, curIndex, y }));
       // Settles the new order on the end of the drag gesture (when down is false)
       if (!down) {
         order.current = newOrder;
