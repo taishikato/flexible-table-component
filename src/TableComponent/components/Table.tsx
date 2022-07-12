@@ -6,46 +6,8 @@ import { useSprings } from "@react-spring/web";
 import { useDrag } from "@use-gesture/react";
 import { swap } from "../utils/swap";
 import { clamp } from "../utils/clamp";
+import { generateSpringsValues } from "../utils/generateSpringsValues";
 import DraggableTr from "./DraggableTr";
-
-const itemHeight = 46;
-
-const fn =
-  ({
-    order,
-    down,
-    originalIndex,
-    curIndex,
-    y,
-  }: {
-    order: number[];
-    down?: any;
-    originalIndex?: number;
-    curIndex?: number;
-    y?: number;
-  }) =>
-  (index: number) =>
-    down && curIndex && y && index === originalIndex
-      ? /*
-      No need to transition the following properties:
-      - z-index, the elevation of the item related to the root of the view; it should pop straight up to 1, from 0.
-      - y, the translated distance from the top; it's already being updated dinamically, smoothly, from react-gesture.
-      Thus immediate returns `true` for both.
-    */
-        {
-          y: curIndex * itemHeight + y,
-          scale: 1.1,
-          zIndex: "1",
-          shadow: 15,
-          immediate: (n: string) => n === "y" || n === "zIndex",
-        }
-      : {
-          y: order.indexOf(index) * itemHeight,
-          scale: 1,
-          zIndex: "0",
-          shadow: 1,
-          immediate: false,
-        };
 
 export type TableProps = Readonly<{
   data: any;
@@ -53,6 +15,7 @@ export type TableProps = Readonly<{
   isFirstColSticky?: boolean;
   isTableFixed?: boolean;
   isDraggable?: boolean;
+  itemHeight?: number;
   onDragEnd: (args?: unknown) => unknown;
 }>;
 
@@ -61,6 +24,7 @@ const Table = ({
   isHeaderSticky = false,
   isFirstColSticky = false,
   isTableFixed = false,
+  itemHeight = 46,
   onDragEnd,
 }: TableProps) => {
   const order = useRef(data.map((_: any, index: number) => index));
@@ -68,7 +32,7 @@ const Table = ({
   // @ts-ignore
   const [springs, api] = useSprings(
     order.current.length,
-    fn({ order: order.current })
+    generateSpringsValues({ order: order.current, itemHeight })
   );
 
   const bind = useDrag(
@@ -84,7 +48,16 @@ const Table = ({
       Curry all variables needed for the truthy clause of the ternary expression from fn,
       so that new objects are fed to the springs without triggering a re-render.
     */
-      api.start(fn({ order: newOrder, down, originalIndex, curIndex, y }));
+      api.start(
+        generateSpringsValues({
+          order: newOrder,
+          down,
+          originalIndex,
+          curIndex,
+          y,
+          itemHeight,
+        })
+      );
       // Settles the new order on the end of the drag gesture (when down is false)
       if (!down) {
         order.current = newOrder;
