@@ -362,6 +362,52 @@
     "@jridgewell/resolve-uri" "^3.0.3"
     "@jridgewell/sourcemap-codec" "^1.4.10"
 
+"@react-spring/animated@~9.4.5":
+  version "9.4.5"
+  resolved "https://registry.yarnpkg.com/@react-spring/animated/-/animated-9.4.5.tgz#dd9921c716a4f4a3ed29491e0c0c9f8ca0eb1a54"
+  integrity sha512-KWqrtvJSMx6Fj9nMJkhTwM9r6LIriExDRV6YHZV9HKQsaolUFppgkOXpC+rsL1JEtEvKv6EkLLmSqHTnuYjiIA==
+  dependencies:
+    "@react-spring/shared" "~9.4.5"
+    "@react-spring/types" "~9.4.5"
+
+"@react-spring/core@~9.4.5":
+  version "9.4.5"
+  resolved "https://registry.yarnpkg.com/@react-spring/core/-/core-9.4.5.tgz#4616e1adc18dd10f5731f100ebdbe9518b89ba3c"
+  integrity sha512-83u3FzfQmGMJFwZLAJSwF24/ZJctwUkWtyPD7KYtNagrFeQKUH1I05ZuhmCmqW+2w1KDW1SFWQ43RawqfXKiiQ==
+  dependencies:
+    "@react-spring/animated" "~9.4.5"
+    "@react-spring/rafz" "~9.4.5"
+    "@react-spring/shared" "~9.4.5"
+    "@react-spring/types" "~9.4.5"
+
+"@react-spring/rafz@~9.4.5":
+  version "9.4.5"
+  resolved "https://registry.yarnpkg.com/@react-spring/rafz/-/rafz-9.4.5.tgz#84f809f287f2a66bbfbc66195db340482f886bd7"
+  integrity sha512-swGsutMwvnoyTRxvqhfJBtGM8Ipx6ks0RkIpNX9F/U7XmyPvBMGd3GgX/mqxZUpdlsuI1zr/jiYw+GXZxAlLcQ==
+
+"@react-spring/shared@~9.4.5":
+  version "9.4.5"
+  resolved "https://registry.yarnpkg.com/@react-spring/shared/-/shared-9.4.5.tgz#4c3ad817bca547984fb1539204d752a412a6d829"
+  integrity sha512-JhMh3nFKsqyag0KM5IIM8BQANGscTdd0mMv3BXsUiMZrcjQTskyfnv5qxEeGWbJGGar52qr5kHuBHtCjQOzniA==
+  dependencies:
+    "@react-spring/rafz" "~9.4.5"
+    "@react-spring/types" "~9.4.5"
+
+"@react-spring/types@~9.4.5":
+  version "9.4.5"
+  resolved "https://registry.yarnpkg.com/@react-spring/types/-/types-9.4.5.tgz#9c71e5ff866b5484a7ef3db822bf6c10e77bdd8c"
+  integrity sha512-mpRIamoHwql0ogxEUh9yr4TP0xU5CWyZxVQeccGkHHF8kPMErtDXJlxyo0lj+telRF35XNihtPTWoflqtyARmg==
+
+"@react-spring/web@9.4.5":
+  version "9.4.5"
+  resolved "https://registry.yarnpkg.com/@react-spring/web/-/web-9.4.5.tgz#b92f05b87cdc0963a59ee149e677dcaff09f680e"
+  integrity sha512-NGAkOtKmOzDEctL7MzRlQGv24sRce++0xAY7KlcxmeVkR7LRSGkoXHaIfm9ObzxPMcPHQYQhf3+X9jepIFNHQA==
+  dependencies:
+    "@react-spring/animated" "~9.4.5"
+    "@react-spring/core" "~9.4.5"
+    "@react-spring/shared" "~9.4.5"
+    "@react-spring/types" "~9.4.5"
+
 "@rollup/pluginutils@^4.2.1":
   version "4.2.1"
   resolved "https://registry.yarnpkg.com/@rollup/pluginutils/-/pluginutils-4.2.1.tgz#e6c6c3aba0744edce3fb2074922d3776c0af2a6d"
@@ -369,6 +415,18 @@
   dependencies:
     estree-walker "^2.0.1"
     picomatch "^2.2.2"
+
+"@types/lodash-es@4.17.6":
+  version "4.17.6"
+  resolved "https://registry.yarnpkg.com/@types/lodash-es/-/lodash-es-4.17.6.tgz#c2ed4c8320ffa6f11b43eb89e9eaeec65966a0a0"
+  integrity sha512-R+zTeVUKDdfoRxpAryaQNRKk3105Rrgx2CFRClIgRGaqDTdjsm8h6IYA8ir584W3ePzkZfst5xIgDwYrlh9HLg==
+  dependencies:
+    "@types/lodash" "*"
+
+"@types/lodash@*":
+  version "4.14.182"
+  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.182.tgz#05301a4d5e62963227eaafe0ce04dd77c54ea5c2"
+  integrity sha512-/THyiqyQAP9AfARo4pF+aCGcyiQ94tX/Is2I7HofNRqoYLgN1PBoOWu2/zTA5zMxzP5EFutMtWtGAFRKUe961Q==
 
 "@types/parse-json@^4.0.0":
   version "4.0.0"
@@ -400,6 +458,18 @@
   version "0.16.2"
   resolved "https://registry.yarnpkg.com/@types/scheduler/-/scheduler-0.16.2.tgz#1a62f89525723dde24ba1b01b092bf5df8ad4d39"
   integrity sha512-hppQEBDmlwhFAXKJX2KnWLYu5yMfi91yazPb2l+lbJiwW+wdo1gNeRA+3RgNSO39WYX2euey41KEwnqesU2Jew==
+
+"@use-gesture/core@10.2.16":
+  version "10.2.16"
+  resolved "https://registry.yarnpkg.com/@use-gesture/core/-/core-10.2.16.tgz#6c8db02955dca405b2544bf78f3ba1f094b6a551"
+  integrity sha512-2J2GICmrSA6RwcowqzL0TY6S8bJY35KhLnE0YjBIVobQL2RilSDefXTKMxxyontp2mALDeeYAHh9ZLu+vMaq8Q==
+
+"@use-gesture/react@10.2.16":
+  version "10.2.16"
+  resolved "https://registry.yarnpkg.com/@use-gesture/react/-/react-10.2.16.tgz#467b4001c335905d35324ee147a2bb93b4f908e2"
+  integrity sha512-kkWi97SHzj/F6XqRXSyrk5pLoSiuRgqvnQl2Bawmf05dWo2q6DL7v5LhnnyPNZRVkCm+WEb3e1nsR+iVza1vmg==
+  dependencies:
+    "@use-gesture/core" "10.2.16"
 
 "@vitejs/plugin-react@^1.3.0":
   version "1.3.2"
@@ -741,6 +811,23 @@ lines-and-columns@^1.1.6:
   version "1.2.4"
   resolved "https://registry.yarnpkg.com/lines-and-columns/-/lines-and-columns-1.2.4.tgz#eca284f75d2965079309dc0ad9255abb2ebc1632"
   integrity sha512-7ylylesZQ/PV29jhEDl3Ufjo6ZX7gCqJr5F7PKrqc93v7fzSymt1BpwEU8nAUXs8qzzvqhbjhK5QZg6Mt/HkBg==
+
+lodash-es@4.17.21:
+  version "4.17.21"
+  resolved "https://registry.yarnpkg.com/lodash-es/-/lodash-es-4.17.21.tgz#43e626c46e6591b7750beb2b50117390c609e3ee"
+  integrity sha512-mKnC+QJ9pWVzv+C4/U3rRsHapFfHvQFoFB92e52xeyGMcX6/OlIl78je1u8vePzYZSkkogMPJ2yjxxsb89cxyw==
+
+lodash-move@1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/lodash-move/-/lodash-move-1.1.1.tgz#59f76e0f1ac57e6d8683f531bec07c5b6ea4e348"
+  integrity sha512-Gm8/lC16NXv2tweIiX7pYhgAQdoSwXzO/WsSmNX/un8rBQUIC7YkauFK2Sdt4NBqWV28BW25P8eDkHWPt91YqQ==
+  dependencies:
+    lodash "^4.6.1"
+
+lodash@^4.6.1:
+  version "4.17.21"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.21.tgz#679591c564c3bffaae8454cf0b3df370c3d6911c"
+  integrity sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==
 
 loose-envify@^1.1.0:
   version "1.4.0"

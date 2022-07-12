@@ -15,7 +15,8 @@ const BodyTh = ({ children, isFirstColSticky }: BodyThProps) => {
         background-color: #ffffff;
         text-align: left;
         font-weight: 300;
-        ${isFirstColSticky ? "position: sticky; z-index: 10; left: 0" : ""}
+        width: 300px;
+        ${isFirstColSticky ? "position: sticky; z-index: 10; left: 0" : ""};
       `}
     >
       {children}

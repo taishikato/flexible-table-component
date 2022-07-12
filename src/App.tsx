@@ -112,7 +112,7 @@ function App() {
       isHeaderSticky
       isTableFixed
       isDraggable
-      onDragEnd={onDragEnd}
+      onDragEnd={() => console.log("hello")}
     />
   );
 }
