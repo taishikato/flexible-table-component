@@ -15,7 +15,7 @@ export const generateSpringsValues =
     itemHeight: number;
   }) =>
   (index: number) =>
-    down && curIndex && y && index === originalIndex
+    down && curIndex !== undefined && y !== undefined && index === originalIndex
       ? /*
       No need to transition the following properties:
       - z-index, the elevation of the item related to the root of the view; it should pop straight up to 1, from 0.
