@@ -15,6 +15,7 @@ type DraggableTrProps = {
   zIndex: SpringValue<string>;
   bind: ReactDOMAttributes;
   isFirstColSticky: boolean;
+  itemHeight: number;
 };
 
 const DraggableTr = ({
@@ -25,6 +26,7 @@ const DraggableTr = ({
   y,
   zIndex,
   isFirstColSticky,
+  itemHeight,
 }: DraggableTrProps) => {
   return (
     <animated.tr
@@ -43,7 +45,7 @@ const DraggableTr = ({
         transformOrigin: "50% 50% 0px",
         position: "absolute",
         width: "100%",
-        height: "46px",
+        height: `${itemHeight}px`,
         display: "flex",
         cursor: "grab",
       }}

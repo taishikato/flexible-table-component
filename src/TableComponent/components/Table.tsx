@@ -101,6 +101,7 @@ const Table = ({
               bind={bind(i)}
               zIndex={zIndex}
               shadow={shadow}
+              itemHeight={itemHeight}
               y={y}
               scale={scale}
               data={data[i]}
