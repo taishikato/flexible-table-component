@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Table, { OnDragEndProps } from "./components/Table";
+import { Table } from "./TableComponent";
 
 const tableDataRaw = [
   {
@@ -96,14 +96,6 @@ const tableDataRaw = [
 
 function App() {
   const [tableData, setTableData] = useState(tableDataRaw);
-
-  const onDragEnd = (result: OnDragEndProps) => {
-    const items = [...tableData];
-    const [draggedItem] = items.splice(result.source, 1);
-    items.splice(result.destination, 0, draggedItem);
-
-    setTableData(items);
-  };
 
   return (
     <Table

@@ -1,5 +1,5 @@
 import { useState, memo, DragEvent, useRef } from "react";
-import drag from "../drag.svg";
+import drag from "../assets/drag.svg";
 import { css } from "@emotion/css";
 import HeaderTh from "./HeaderTh";
 import FirstTh from "./FirstTh";
@@ -10,8 +10,6 @@ import { useSprings, animated, to } from "@react-spring/web";
 import { useDrag } from "@use-gesture/react";
 import { swap } from "../utils/swap";
 import { clamp } from "../utils/clamp";
-
-export type OnDragEndProps = { destination: number; source: number };
 
 const itemHeight = 46;
 
