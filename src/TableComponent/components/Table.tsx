@@ -1,15 +1,13 @@
-import { useState, memo, DragEvent, useRef } from "react";
-import drag from "../assets/drag.svg";
+import { memo, useRef } from "react";
 import { css } from "@emotion/css";
 import HeaderTh from "./HeaderTh";
 import FirstTh from "./FirstTh";
-import BodyTh from "./BodyTh";
-import Td from "./Td";
 import "./Table.css";
-import { useSprings, animated, to } from "@react-spring/web";
+import { useSprings } from "@react-spring/web";
 import { useDrag } from "@use-gesture/react";
 import { swap } from "../utils/swap";
 import { clamp } from "../utils/clamp";
+import DraggableTr from "./DraggableTr";
 
 const itemHeight = 46;
 
@@ -58,10 +56,8 @@ const Table = ({
   isHeaderSticky = false,
   isFirstColSticky = false,
   isTableFixed = false,
-  isDraggable = false,
   onDragEnd,
 }: TableProps) => {
-  const [dragId, setDragId] = useState<number>(0);
   const order = useRef(data.map((_: any, index: number) => index));
 
   // @ts-ignore
@@ -119,43 +115,16 @@ const Table = ({
       <tbody style={{ position: "relative", overflow: "auto" }}>
         {springs.map(({ zIndex, shadow, y, scale }, i) => {
           return (
-            <animated.tr
-              {...bind(i)}
+            <DraggableTr
               key={i}
-              style={{
-                zIndex,
-                boxShadow: shadow.to(
-                  (s) => `rgba(0, 0, 0, 0.15) 0px ${s}px ${2 * s}px 0px`
-                ),
-                transform: to(
-                  [y, scale],
-                  (y, s) => `translate3d(0,${y}px,0) scale(${s})`
-                ),
-                touchAction: "none",
-                backgroundColor: "#ffffff",
-                transformOrigin: "50% 50% 0px",
-                position: "absolute",
-                width: "100%",
-                height: "46px",
-                display: "flex",
-              }}
-            >
-              <BodyTh isFirstColSticky>
-                <div
-                  className={css`
-                    display: flex;
-                    align-items: center;
-                    column-gap: 0.75rem;
-                  `}
-                >
-                  {isDraggable && <img src={drag} />}
-                  {data[i].name}
-                </div>
-              </BodyTh>
-              {data[i].values.map((value: any, index: number) => (
-                <Td key={index}>{value}</Td>
-              ))}
-            </animated.tr>
+              bind={bind(i)}
+              zIndex={zIndex}
+              shadow={shadow}
+              y={y}
+              scale={scale}
+              data={data[i]}
+              isFirstColSticky={isFirstColSticky}
+            />
           );
         })}
       </tbody>
