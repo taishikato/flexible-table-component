@@ -8,8 +8,8 @@ import Td from "./Td";
 import "./Table.css";
 import { useSprings, animated, to } from "@react-spring/web";
 import { useDrag } from "@use-gesture/react";
-import clamp from "lodash-es/clamp";
-import swap from "lodash-move";
+import { swap } from "../utils/swap";
+import { clamp } from "../utils/clamp";
 
 export type OnDragEndProps = { destination: number; source: number };
 
