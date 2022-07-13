@@ -1,7 +1,7 @@
+import type { ColumnProps } from "../types";
 import { memo } from "react";
 import HeaderRow from "./HeaderRow";
 import FirstHeaderRow from "./FirstHeaderRow";
-import type { ColumnProps } from "./Table";
 
 type ColumnsProps = {
   columns: ColumnProps[];

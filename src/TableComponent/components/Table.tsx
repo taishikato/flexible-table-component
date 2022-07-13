@@ -1,3 +1,4 @@
+import type { DataProps, ColumnProps } from "../types";
 import { memo, useRef } from "react";
 import { css } from "@emotion/css";
 import { useSprings } from "@react-spring/web";
@@ -5,18 +6,6 @@ import useBind from "../hooks/useBind";
 import { generateSpringsValues } from "../utils/generateSpringsValues";
 import Header from "./Header";
 import Body from "./Body";
-
-export type ColumnProps = Readonly<{
-  key: string;
-  dataIndex?: string;
-  title: string;
-  render?: (val: string) => any;
-}>;
-
-export type DataProps = {
-  name: string;
-  [timestamp: string]: string;
-};
 
 export type TableProps = Readonly<{
   data: DataProps[];

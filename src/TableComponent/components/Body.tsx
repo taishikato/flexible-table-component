@@ -1,7 +1,8 @@
 import type { SpringValue } from "@react-spring/web";
 import type { ReactDOMAttributes } from "@use-gesture/react/src/types";
-import type { ColumnProps, DataProps } from "./Table";
+import type { ColumnProps, DataProps } from "../types";
 import { memo } from "react";
+import { css } from "@emotion/css";
 import DraggableRow from "./DraggableRow";
 
 type BodyProps = {
@@ -27,7 +28,12 @@ const Body = ({
   isFirstColSticky,
 }: BodyProps) => {
   return (
-    <tbody style={{ position: "relative", overflow: "auto" }}>
+    <tbody
+      className={css`
+        position: relative;
+        overflow: auto;
+      `}
+    >
       {springs.map(({ zIndex, shadow, y, scale }, i) => {
         return (
           <DraggableRow

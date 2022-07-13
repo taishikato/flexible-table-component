@@ -26,7 +26,7 @@ const FirstHeaderRow = ({
         ${isHeaderSticky && !isFirstColSticky
           ? "position: sticky; top: 0px; z-index: 20;"
           : ""}
-		${!isHeaderSticky && isFirstColSticky
+		    ${!isHeaderSticky && isFirstColSticky
           ? "position: sticky; left: 0; z-index: 20;"
           : ""}
       `}
