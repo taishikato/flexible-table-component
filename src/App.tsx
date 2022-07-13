@@ -130,7 +130,6 @@ function App() {
       isFirstColSticky
       isHeaderSticky
       isTableFixed
-      isDraggable
       onDragEnd={() => console.log("hello")}
     />
   );

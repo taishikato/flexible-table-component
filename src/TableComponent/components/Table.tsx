@@ -25,7 +25,6 @@ export type TableProps = Readonly<{
   isHeaderSticky?: boolean;
   isFirstColSticky?: boolean;
   isTableFixed?: boolean;
-  isDraggable?: boolean;
   itemHeight?: number;
   onDragEnd: (args?: unknown) => unknown;
 }>;
