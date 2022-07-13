@@ -1,24 +1,42 @@
+import type { ColumnProps } from "../types";
 import { memo } from "react";
-import { css } from "@emotion/css";
+import Column from "./Column";
+import FirstColumn from "./FirstColumn";
 
-export type ColumnProps = Readonly<{
-  children: JSX.Element | string | number;
+type HeaderRowProps = {
+  columns: ColumnProps[];
   isHeaderSticky: boolean;
-}>;
+  isFirstColSticky: boolean;
+};
 
-const HeaderRow = ({ children, isHeaderSticky }: ColumnProps) => {
+const HeaderRow = ({
+  columns,
+  isHeaderSticky,
+  isFirstColSticky,
+}: HeaderRowProps) => {
   return (
-    <th
-      className={css`
-        border-bottom: 1px solid #0b1424;
-        padding: 12px;
-        background-color: #ffffff;
-        font-weight: 300;
-        ${isHeaderSticky ? "position: sticky; top: 0; z-index: 10;" : ""}
-      `}
-    >
-      {children}
-    </th>
+    <thead>
+      <tr>
+        {columns.map(({ title, render, key }, index) => {
+          if (index === 0)
+            return (
+              <FirstColumn
+                key={key}
+                isHeaderSticky={isHeaderSticky}
+                isFirstColSticky={isFirstColSticky}
+              >
+                {render ? render(title) : title}
+              </FirstColumn>
+            );
+
+          return (
+            <Column key={key} isHeaderSticky={isHeaderSticky}>
+              {render ? render(title) : title}
+            </Column>
+          );
+        })}
+      </tr>
+    </thead>
   );
 };
 

@@ -3,7 +3,7 @@ import type { ReactDOMAttributes } from "@use-gesture/react/src/types";
 import type { ColumnProps, DataProps } from "../types";
 import { memo } from "react";
 import { css } from "@emotion/css";
-import DraggableRow from "./DraggableRow";
+import BodyRow from "./BodyRow";
 
 type BodyProps = {
   springs: {
@@ -36,7 +36,7 @@ const Body = ({
     >
       {springs.map(({ zIndex, shadow, y, scale }, i) => {
         return (
-          <DraggableRow
+          <BodyRow
             key={i}
             bind={bind(i)}
             zIndex={zIndex}

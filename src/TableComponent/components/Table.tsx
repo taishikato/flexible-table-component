@@ -4,7 +4,7 @@ import { css } from "@emotion/css";
 import { useSprings } from "@react-spring/web";
 import useBind from "../hooks/useBind";
 import { generateSpringsValues } from "../utils/generateSpringsValues";
-import Header from "./Header";
+import HeaderRow from "./HeaderRow";
 import Body from "./Body";
 
 export type TableProps = Readonly<{
@@ -55,7 +55,7 @@ const Table = ({
         ${isTableFixed ? "table-layout: fixed;" : ""}
       `}
     >
-      <Header
+      <HeaderRow
         columns={columns}
         isHeaderSticky={isHeaderSticky}
         isFirstColSticky={isFirstColSticky}

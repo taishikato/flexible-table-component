@@ -8,7 +8,7 @@ import { css } from "@emotion/css";
 import drag from "../assets/drag.svg";
 import Td from "./Td";
 
-type DraggableRowProps = {
+type BodyRowProps = {
   data: DataProps;
   columns: ColumnProps[];
   scale: SpringValue<number>;
@@ -20,7 +20,7 @@ type DraggableRowProps = {
   itemHeight: number;
 };
 
-const DraggableRow = ({
+const BodyRow = ({
   bind,
   data,
   columns,
@@ -30,7 +30,7 @@ const DraggableRow = ({
   zIndex,
   isFirstColSticky,
   itemHeight,
-}: DraggableRowProps) => (
+}: BodyRowProps) => (
   <animated.tr
     {...bind}
     className={css`
@@ -74,4 +74,4 @@ const DraggableRow = ({
   </animated.tr>
 );
 
-export default memo(DraggableRow);
+export default memo(BodyRow);
