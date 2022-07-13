@@ -8,7 +8,7 @@ import drag from "../assets/drag.svg";
 import Td from "./Td";
 import type { DataProps, ColumnProps } from "./Table";
 
-type DraggableTrProps = {
+type DraggableRowProps = {
   data: DataProps;
   columns: ColumnProps[];
   scale: SpringValue<number>;
@@ -20,7 +20,7 @@ type DraggableTrProps = {
   itemHeight: number;
 };
 
-const DraggableTr = ({
+const DraggableRow = ({
   bind,
   data,
   columns,
@@ -30,7 +30,7 @@ const DraggableTr = ({
   zIndex,
   isFirstColSticky,
   itemHeight,
-}: DraggableTrProps) => {
+}: DraggableRowProps) => {
   return (
     <animated.tr
       {...bind}
@@ -74,4 +74,4 @@ const DraggableTr = ({
   );
 };
 
-export default memo(DraggableTr);
+export default memo(DraggableRow);

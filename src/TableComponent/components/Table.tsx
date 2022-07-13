@@ -5,7 +5,7 @@ import FirstTh from "./FirstTh";
 import { useSprings } from "@react-spring/web";
 import useBind from "../hooks/useBind";
 import { generateSpringsValues } from "../utils/generateSpringsValues";
-import DraggableTr from "./DraggableTr";
+import DraggableRow from "./DraggableRow";
 
 export type ColumnProps = Readonly<{
   key: string;
@@ -93,7 +93,7 @@ const Table = ({
       <tbody style={{ position: "relative", overflow: "auto" }}>
         {springs.map(({ zIndex, shadow, y, scale }, i) => {
           return (
-            <DraggableTr
+            <DraggableRow
               key={i}
               bind={bind(i)}
               zIndex={zIndex}
