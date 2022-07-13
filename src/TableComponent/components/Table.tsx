@@ -1,11 +1,10 @@
 import { memo, useRef } from "react";
 import { css } from "@emotion/css";
-import HeaderTh from "./HeaderTh";
-import FirstTh from "./FirstTh";
 import { useSprings } from "@react-spring/web";
 import useBind from "../hooks/useBind";
 import { generateSpringsValues } from "../utils/generateSpringsValues";
-import DraggableRow from "./DraggableRow";
+import Header from "./Header";
+import Body from "./Body";
 
 export type ColumnProps = Readonly<{
   key: string;
@@ -67,46 +66,19 @@ const Table = ({
         ${isTableFixed ? "table-layout: fixed;" : ""}
       `}
     >
-      <thead>
-        <tr>
-          {columns.map(({ title, render, key }, index) => {
-            if (index === 0)
-              return (
-                <FirstTh
-                  key={key}
-                  isHeaderSticky={isHeaderSticky}
-                  isFirstColSticky={isFirstColSticky}
-                >
-                  {render ? render(title) : title}
-                </FirstTh>
-              );
-
-            return (
-              <HeaderTh key={key} isHeaderSticky={isHeaderSticky}>
-                {render ? render(title) : title}
-              </HeaderTh>
-            );
-          })}
-        </tr>
-      </thead>
-      <tbody style={{ position: "relative", overflow: "auto" }}>
-        {springs.map(({ zIndex, shadow, y, scale }, i) => {
-          return (
-            <DraggableRow
-              key={i}
-              bind={bind(i)}
-              zIndex={zIndex}
-              shadow={shadow}
-              itemHeight={itemHeight}
-              y={y}
-              scale={scale}
-              data={data[i]}
-              columns={columns}
-              isFirstColSticky={isFirstColSticky}
-            />
-          );
-        })}
-      </tbody>
+      <Header
+        columns={columns}
+        isHeaderSticky={isHeaderSticky}
+        isFirstColSticky={isFirstColSticky}
+      />
+      <Body
+        springs={springs}
+        itemHeight={itemHeight}
+        bind={bind}
+        data={data}
+        columns={columns}
+        isFirstColSticky={isFirstColSticky}
+      />
     </table>
   );
 };

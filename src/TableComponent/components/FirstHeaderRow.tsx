@@ -1,17 +1,17 @@
 import { memo } from "react";
 import { css } from "@emotion/css";
 
-type FirstThProps = Readonly<{
+type FirstHeaderRowProps = Readonly<{
   children: JSX.Element | string | number;
   isHeaderSticky: boolean;
   isFirstColSticky: boolean;
 }>;
 
-const FirstTh = ({
+const FirstHeaderRow = ({
   children,
   isHeaderSticky,
   isFirstColSticky,
-}: FirstThProps) => {
+}: FirstHeaderRowProps) => {
   return (
     <th
       className={css`
@@ -36,4 +36,4 @@ const FirstTh = ({
   );
 };
 
-export default memo(FirstTh);
+export default memo(FirstHeaderRow);
