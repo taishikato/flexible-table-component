@@ -29,7 +29,6 @@ const Table = ({
 }: TableProps) => {
   const order = useRef(data.map((_: any, index: number) => index));
 
-  // @ts-ignore
   const [springs, api] = useSprings(
     order.current.length,
     generateSpringsValues({ order: order.current, itemHeight })
