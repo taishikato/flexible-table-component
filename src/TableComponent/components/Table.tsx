@@ -9,8 +9,21 @@ import { clamp } from "../utils/clamp";
 import { generateSpringsValues } from "../utils/generateSpringsValues";
 import DraggableTr from "./DraggableTr";
 
+export type ColumnProps = Readonly<{
+  key: string;
+  dataIndex?: string;
+  title: string;
+  render?: (val: string) => any;
+}>;
+
+export type DataProps = {
+  name: string;
+  [timestamp: string]: string;
+};
+
 export type TableProps = Readonly<{
-  data: any;
+  data: DataProps[];
+  columns: ColumnProps[];
   isHeaderSticky?: boolean;
   isFirstColSticky?: boolean;
   isTableFixed?: boolean;
@@ -21,6 +34,7 @@ export type TableProps = Readonly<{
 
 const Table = ({
   data,
+  columns,
   isHeaderSticky = false,
   isFirstColSticky = false,
   isTableFixed = false,
@@ -79,17 +93,24 @@ const Table = ({
     >
       <thead>
         <tr>
-          <FirstTh
-            isHeaderSticky={isHeaderSticky}
-            isFirstColSticky={isFirstColSticky}
-          >
-            Last Update: June 14th, 10:00 AM
-          </FirstTh>
-          <HeaderTh isHeaderSticky={isHeaderSticky}>Jun 12th</HeaderTh>
-          <HeaderTh isHeaderSticky={isHeaderSticky}>Jun 13th</HeaderTh>
-          <HeaderTh isHeaderSticky={isHeaderSticky}>Current</HeaderTh>
-          <HeaderTh isHeaderSticky={isHeaderSticky}>Jun 15th</HeaderTh>
-          <HeaderTh isHeaderSticky={isHeaderSticky}>Jun 16th</HeaderTh>
+          {columns.map(({ title, render, key }, index) => {
+            if (index === 0)
+              return (
+                <FirstTh
+                  key={key}
+                  isHeaderSticky={isHeaderSticky}
+                  isFirstColSticky={isFirstColSticky}
+                >
+                  {render ? render(title) : title}
+                </FirstTh>
+              );
+
+            return (
+              <HeaderTh key={key} isHeaderSticky={isHeaderSticky}>
+                {render ? render(title) : title}
+              </HeaderTh>
+            );
+          })}
         </tr>
       </thead>
       <tbody style={{ position: "relative", overflow: "auto" }}>
@@ -104,6 +125,7 @@ const Table = ({
               y={y}
               scale={scale}
               data={data[i]}
+              columns={columns}
               isFirstColSticky={isFirstColSticky}
             />
           );

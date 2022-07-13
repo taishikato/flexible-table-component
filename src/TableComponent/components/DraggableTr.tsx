@@ -6,9 +6,11 @@ import BodyTh from "./BodyTh";
 import { css } from "@emotion/css";
 import drag from "../assets/drag.svg";
 import Td from "./Td";
+import type { DataProps, ColumnProps } from "./Table";
 
 type DraggableTrProps = {
-  data: any;
+  data: DataProps;
+  columns: ColumnProps[];
   scale: SpringValue<number>;
   shadow: SpringValue<number>;
   y: SpringValue<number>;
@@ -21,6 +23,7 @@ type DraggableTrProps = {
 const DraggableTr = ({
   bind,
   data,
+  columns,
   scale,
   shadow,
   y,
@@ -62,9 +65,11 @@ const DraggableTr = ({
           {data.name}
         </div>
       </BodyTh>
-      {data.values.map((value: any, index: number) => (
-        <Td key={index}>{value}</Td>
-      ))}
+      {columns.map(({ key, dataIndex }) => {
+        if (dataIndex == null) return;
+
+        return <Td key={key}>{data[dataIndex]}</Td>;
+      })}
     </animated.tr>
   );
 };
