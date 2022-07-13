@@ -3,9 +3,7 @@ import { css } from "@emotion/css";
 import HeaderTh from "./HeaderTh";
 import FirstTh from "./FirstTh";
 import { useSprings } from "@react-spring/web";
-import { useDrag } from "@use-gesture/react";
-import { swap } from "../utils/swap";
-import { clamp } from "../utils/clamp";
+import useBind from "../hooks/useBind";
 import { generateSpringsValues } from "../utils/generateSpringsValues";
 import DraggableTr from "./DraggableTr";
 
@@ -48,37 +46,16 @@ const Table = ({
     generateSpringsValues({ order: order.current, itemHeight })
   );
 
-  const bind = useDrag(
-    ({ args: [originalIndex], down = false, movement: [, y] }) => {
-      const curIndex = order.current.indexOf(originalIndex);
-      const curRow = clamp(
-        Math.round((curIndex * itemHeight + y) / itemHeight),
-        0,
-        data.length - 1
-      );
-      const newOrder = swap<number>(order.current, curIndex, curRow);
-      /*
-      Curry all variables needed for the truthy clause of the ternary expression from fn,
-      so that new objects are fed to the springs without triggering a re-render.
-    */
-      api.start(
-        generateSpringsValues({
-          order: newOrder,
-          down,
-          originalIndex,
-          curIndex,
-          y,
-          itemHeight,
-        })
-      );
-      // Settles the new order on the end of the drag gesture (when down is false)
-      if (!down) {
-        order.current = newOrder;
-        // update function
-        onDragEnd();
-      }
-    }
-  );
+  const bind = useBind({
+    springsApi: api,
+    itemHeight,
+    order: order.current,
+    dataLength: data.length,
+    callBack: (newOrder) => {
+      order.current = newOrder;
+      onDragEnd();
+    },
+  });
 
   return (
     <table
