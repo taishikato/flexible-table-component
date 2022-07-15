@@ -3,6 +3,7 @@ import { useDrag } from "@use-gesture/react";
 import { generateSpringsValues } from "../utils/generateSpringsValues";
 import { swap } from "../utils/swap";
 import { clamp } from "../utils/clamp";
+import { useState } from "react";
 
 type UseBindProps = {
   springsApi: SpringRef<{
@@ -20,10 +21,12 @@ type UseBindProps = {
 const useBind = ({
   springsApi,
   itemHeight,
-  order,
+  order: initialOrder,
   dataLength,
   callBack,
 }: UseBindProps) => {
+  const [order, setOrder] = useState(initialOrder);
+
   const bind = useDrag(
     ({ args: [originalIndex], down = false, movement: [, y] }) => {
       const curIndex = order.indexOf(originalIndex);
@@ -48,12 +51,10 @@ const useBind = ({
         })
       );
       // Settles the new order on the end of the drag gesture (when down is false)
-      if (!down && callBack) callBack(newOrder);
-      // callBack();
-      // order.current = newOrder;
-      // update function
-      // onDragEnd();
-      // }
+      if (!down && callBack) {
+        callBack(newOrder);
+        setOrder(newOrder);
+      }
     }
   );
 
