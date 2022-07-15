@@ -1,5 +1,5 @@
-import { useDrag } from "@use-gesture/react";
 import type { SpringRef } from "@react-spring/web";
+import { useDrag } from "@use-gesture/react";
 import { generateSpringsValues } from "../utils/generateSpringsValues";
 import { swap } from "../utils/swap";
 import { clamp } from "../utils/clamp";
