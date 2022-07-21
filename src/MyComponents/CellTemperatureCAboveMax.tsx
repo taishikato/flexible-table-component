@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { css } from "@emotion/css";
 import { CellProps } from "./CellProps";
 
@@ -18,4 +19,4 @@ const CellTemperatureCAboveMax = ({ val, row, cellCSS }: CellProps) => {
   );
 };
 
-export default CellTemperatureCAboveMax;
+export default memo(CellTemperatureCAboveMax);
