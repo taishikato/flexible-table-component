@@ -13,6 +13,7 @@ const Td = ({ children }: TdProps) => {
         padding: 12px;
         font-weight: 600;
         text-align: center;
+        flex: 1 1 0%;
       `}
     >
       {children}

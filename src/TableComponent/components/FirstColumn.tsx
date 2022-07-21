@@ -1,17 +1,17 @@
 import { memo } from "react";
 import { css } from "@emotion/css";
 
-type FirstThProps = Readonly<{
+type FirstColumnProps = Readonly<{
   children: JSX.Element | string | number;
   isHeaderSticky: boolean;
   isFirstColSticky: boolean;
 }>;
 
-const FirstTh = ({
+const FirstColumn = ({
   children,
   isHeaderSticky,
   isFirstColSticky,
-}: FirstThProps) => {
+}: FirstColumnProps) => {
   return (
     <th
       className={css`
@@ -26,7 +26,7 @@ const FirstTh = ({
         ${isHeaderSticky && !isFirstColSticky
           ? "position: sticky; top: 0px; z-index: 20;"
           : ""}
-		${!isHeaderSticky && isFirstColSticky
+		    ${!isHeaderSticky && isFirstColSticky
           ? "position: sticky; left: 0; z-index: 20;"
           : ""}
       `}
@@ -36,4 +36,4 @@ const FirstTh = ({
   );
 };
 
-export default memo(FirstTh);
+export default memo(FirstColumn);

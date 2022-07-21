@@ -1,12 +1,12 @@
 import { memo } from "react";
 import { css } from "@emotion/css";
 
-export type ThProps = Readonly<{
+export type ColumnProps = Readonly<{
   children: JSX.Element | string | number;
   isHeaderSticky: boolean;
 }>;
 
-const HeaderTh = ({ children, isHeaderSticky }: ThProps) => {
+const Column = ({ children, isHeaderSticky }: ColumnProps) => {
   return (
     <th
       className={css`
@@ -22,4 +22,4 @@ const HeaderTh = ({ children, isHeaderSticky }: ThProps) => {
   );
 };
 
-export default memo(HeaderTh);
+export default memo(Column);
