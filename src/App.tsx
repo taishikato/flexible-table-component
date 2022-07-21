@@ -6,20 +6,14 @@ import "moment-timezone";
 import CellTemperatureCAboveMax from "./MyComponents/CellTemperatureCAboveMax";
 import CellTemperatureCInMax from "./MyComponents/CellTemperatureCInMax";
 import CellTemperatureCBelowMax from "./MyComponents/CellTemperatureCBelowMax";
+import { CellProps } from "./MyComponents/CellProps";
 
 export type BanyanValueType =
   | "temperature_c_above_max"
   | "temperature_c_in_max"
   | "temperature_c_below_max";
 
-const valueToRowRendererMapper: Record<
-  BanyanValueType,
-  React.FC<{
-    val: string | number;
-    row: DataProps<BanyanValueType>;
-    cellCSS?: any;
-  }>
-> = {
+const valueToRowRendererMapper: Record<BanyanValueType, React.FC<CellProps>> = {
   temperature_c_above_max: CellTemperatureCAboveMax,
   temperature_c_in_max: CellTemperatureCInMax,
   temperature_c_below_max: CellTemperatureCBelowMax,

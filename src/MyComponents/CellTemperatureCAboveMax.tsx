@@ -1,16 +1,7 @@
-import { DataProps } from "../TableComponent";
-import { BanyanValueType } from "../App";
 import { css } from "@emotion/css";
+import { CellProps } from "./CellProps";
 
-const CellTemperatureCAboveMax = ({
-  val,
-  row,
-  cellCSS,
-}: {
-  val: string | number;
-  row: DataProps<BanyanValueType>;
-  cellCSS?: any;
-}) => {
+const CellTemperatureCAboveMax = ({ val, row, cellCSS }: CellProps) => {
   return (
     <td
       className={css`
