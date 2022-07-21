@@ -25,13 +25,13 @@ const HeaderRow = ({
                 isHeaderSticky={isHeaderSticky}
                 isFirstColSticky={isFirstColSticky}
               >
-                {render ? render(title) : title}
+                {title}
               </FirstColumn>
             );
 
           return (
             <Column key={key} isHeaderSticky={isHeaderSticky}>
-              {render ? render(title) : title}
+              {title}
             </Column>
           );
         })}

@@ -9,7 +9,7 @@ import drag from "../assets/drag.svg";
 import Td from "./Td";
 
 type BodyRowProps = {
-  data: DataProps;
+  data: DataProps<any>;
   columns: ColumnProps[];
   scale: SpringValue<number>;
   shadow: SpringValue<number>;
@@ -66,8 +66,10 @@ const BodyRow = ({
         {data.name}
       </div>
     </BodyTh>
-    {columns.map(({ key, dataIndex }) => {
+    {columns.map(({ key, dataIndex, render, cellCSS }) => {
       if (dataIndex == null) return;
+
+      if (render) return render(data[dataIndex], data, cellCSS);
 
       return <Td key={key}>{data[dataIndex]}</Td>;
     })}

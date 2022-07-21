@@ -14,7 +14,7 @@ type BodyProps = {
   }[];
   bind: (...args: any[]) => ReactDOMAttributes;
   itemHeight: number;
-  data: DataProps[];
+  data: DataProps<any>[];
   columns: ColumnProps[];
   isFirstColSticky: boolean;
 };
