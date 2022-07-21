@@ -6,7 +6,7 @@ export type ColumnProps = Readonly<{
   cellCSS?: Record<string, string | number>;
 }>;
 
-export type DataProps<VN extends string> = Readonly<{
+export type DataProps<VN extends string = ""> = Readonly<{
   name: string;
   [timestamp: string]: string;
   valueName: VN;

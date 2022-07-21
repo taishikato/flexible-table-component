@@ -9,7 +9,7 @@ import drag from "../assets/drag.svg";
 import Td from "./Td";
 
 type BodyRowProps = {
-  data: DataProps<any>;
+  data: DataProps;
   columns: ColumnProps[];
   scale: SpringValue<number>;
   shadow: SpringValue<number>;
