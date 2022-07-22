@@ -8,7 +8,7 @@ import HeaderRow from "./HeaderRow";
 import Body from "./Body";
 
 export type TableProps = Readonly<{
-  data: DataProps[];
+  data: DataProps<any>[];
   columns: ColumnProps[];
   isHeaderSticky?: boolean;
   isFirstColSticky?: boolean;

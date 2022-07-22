@@ -23,7 +23,7 @@ const HeaderRow = ({
           width: 100%;
         `}
       >
-        {columns.map(({ title, render, key }, index) => {
+        {columns.map(({ title, render, key, cellCSS }, index) => {
           if (index === 0)
             return (
               <FirstColumn
