@@ -47,11 +47,12 @@ const Table = ({
   return (
     <table
       className={css`
-        min-width: 600px;
+        width: 100%;
+        height: 500px;
         border-collapse: separate;
         border-spacing: 0px 0px;
         position: relative;
-        height: 500px;
+        box-sizing: border-box;
         ${isTableFixed ? "table-layout: fixed;" : ""}
       `}
     >

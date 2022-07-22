@@ -42,6 +42,7 @@ const BodyRow = ({
       height: ${itemHeight}px;
       display: flex;
       cursor: grab;
+      box-sizing: border-box;
     `}
     style={{
       zIndex,

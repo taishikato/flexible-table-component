@@ -99,14 +99,16 @@ function App() {
   const [tableData, setTableData] = useState(tableDataRaw);
 
   return (
-    <Table
-      data={tableData}
-      columns={columns}
-      isFirstColSticky
-      isHeaderSticky
-      isTableFixed
-      onDragEnd={() => console.log("hello")}
-    />
+    <div style={{ minWidth: "400px", maxWidth: "600px", margin: "0 auto" }}>
+      <Table
+        data={tableData}
+        columns={columns}
+        isFirstColSticky
+        isHeaderSticky
+        isTableFixed
+        onDragEnd={() => console.log("hello")}
+      />
+    </div>
   );
 }
 

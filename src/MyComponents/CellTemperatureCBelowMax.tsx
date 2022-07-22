@@ -6,11 +6,14 @@ const CellTemperatureCBelowMax = ({ val, row, cellCSS }: CellProps) => {
   return (
     <td
       className={css`
+        display: flex;
+        align-items: center;
+        justify-content: center;
         border: 1px solid rgb(203 213 225);
-        padding: 12px;
         font-weight: 600;
         text-align: center;
         flex: 1 1 0%;
+        box-sizing: border-box;
       `}
       style={cellCSS}
     >

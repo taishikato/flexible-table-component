@@ -15,11 +15,14 @@ const FirstColumn = ({
   return (
     <th
       className={css`
+        display: flex;
+        align-items: center;
         border-bottom: 1px solid #0b1424;
-        text-align: left;
+        padding-left: 10px;
         font-weight: 600;
         background-color: #ffffff;
-        padding: 12px;
+        width: 300px;
+        box-sizing: border-box;
         ${isHeaderSticky && isFirstColSticky
           ? "position: sticky; top: 0px; left: 0; z-index: 20;"
           : ""}

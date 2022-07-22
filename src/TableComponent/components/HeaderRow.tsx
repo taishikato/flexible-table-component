@@ -2,6 +2,7 @@ import type { ColumnProps } from "../types";
 import { memo } from "react";
 import Column from "./Column";
 import FirstColumn from "./FirstColumn";
+import { css } from "@emotion/css";
 
 type HeaderRowProps = {
   columns: ColumnProps[];
@@ -16,7 +17,12 @@ const HeaderRow = ({
 }: HeaderRowProps) => {
   return (
     <thead>
-      <tr>
+      <tr
+        className={css`
+          display: flex;
+          width: 100%;
+        `}
+      >
         {columns.map(({ title, render, key }, index) => {
           if (index === 0)
             return (

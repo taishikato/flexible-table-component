@@ -14,6 +14,7 @@ const Column = ({ children, isHeaderSticky }: ColumnProps) => {
         padding: 12px;
         background-color: #ffffff;
         font-weight: 300;
+        flex: 1 1 0%;
         ${isHeaderSticky ? "position: sticky; top: 0; z-index: 10;" : ""}
       `}
     >
