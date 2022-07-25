@@ -61,14 +61,19 @@ const tableDataRaw: DataProps<BanyanValueType>[] = [
 const timezone = "America/Los_Angeles";
 
 const columns: ColumnProps[] = [
-  {
-    key: "valueName",
-    dataIndex: "valueName",
-    title: "Last Update: June 14th, 10:00 AM",
-    render: (title) => {
+  (() => {
+    const render = (title: string) => {
       return <CustomBodyThContent title={title} />;
-    },
-  },
+    };
+
+    return {
+      key: "valueName",
+      dataIndex: "valueName",
+      title: "Last Update: June 14th, 10:00 AM",
+      render,
+      cellCSS: { padding: "12px" },
+    };
+  })(),
   ...dates.map((d) => {
     const momentOfDate = moment.tz(d, timezone);
     const todayMoment = moment.tz(timezone);

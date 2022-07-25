@@ -4,9 +4,10 @@ import { css } from "@emotion/css";
 type BodyThProps = Readonly<{
   children: JSX.Element | string | number;
   isFirstColSticky: boolean;
+  cellCSS?: Record<string, string | number>;
 }>;
 
-const BodyTh = ({ children, isFirstColSticky }: BodyThProps) => {
+const BodyTh = ({ children, isFirstColSticky, cellCSS }: BodyThProps) => {
   return (
     <th
       className={css`
@@ -21,6 +22,7 @@ const BodyTh = ({ children, isFirstColSticky }: BodyThProps) => {
         box-sizing: border-box;
         ${isFirstColSticky ? "position: sticky; z-index: 10; left: 0" : ""};
       `}
+      style={cellCSS}
     >
       {children}
     </th>

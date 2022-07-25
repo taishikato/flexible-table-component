@@ -60,7 +60,11 @@ const BodyRow = ({
       // Columns for value names
       if (index === 0) {
         return (
-          <BodyTh isFirstColSticky={isFirstColSticky} key={key}>
+          <BodyTh
+            key={key}
+            cellCSS={cellCSS}
+            isFirstColSticky={isFirstColSticky}
+          >
             {render ? render(data.name) : data.name}
           </BodyTh>
         );
@@ -69,7 +73,11 @@ const BodyRow = ({
       // Columns for values
       if (render) return render(data[dataIndex], data, cellCSS);
 
-      return <Td key={key}>{data[dataIndex]}</Td>;
+      return (
+        <Td key={key} cellCSS={cellCSS}>
+          {data[dataIndex]}
+        </Td>
+      );
     })}
   </animated.tr>
 );
