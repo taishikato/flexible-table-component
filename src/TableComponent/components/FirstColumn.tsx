@@ -15,8 +15,6 @@ const FirstColumn = ({
   return (
     <th
       className={css`
-        display: flex;
-        align-items: center;
         flex-shrink: 0;
         border-bottom: 1px solid #0b1424;
         padding-left: 10px;

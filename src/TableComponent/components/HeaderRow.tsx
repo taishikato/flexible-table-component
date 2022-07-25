@@ -17,12 +17,7 @@ const HeaderRow = ({
 }: HeaderRowProps) => {
   return (
     <thead>
-      <tr
-        className={css`
-          display: flex;
-          width: 100%;
-        `}
-      >
+      <tr>
         {columns.map(({ title, render, key, cellCSS }, index) => {
           if (index === 0)
             return (
