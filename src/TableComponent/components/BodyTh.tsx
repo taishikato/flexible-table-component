@@ -12,6 +12,7 @@ const BodyTh = ({ children, isFirstColSticky }: BodyThProps) => {
       className={css`
         display: flex;
         align-items: center;
+        flex-shrink: 0;
         padding-left: 10px;
         border: 1px solid rgb(203 213 225);
         background-color: #ffffff;

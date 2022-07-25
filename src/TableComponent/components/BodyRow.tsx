@@ -56,16 +56,10 @@ const BodyRow = ({
     }}
   >
     <BodyTh isFirstColSticky={isFirstColSticky}>
-      <div
-        className={css`
-          display: flex;
-          align-items: center;
-          column-gap: 0.75rem;
-        `}
-      >
+      <>
         <img src={drag} />
         {data.name}
-      </div>
+      </>
     </BodyTh>
     {columns.map(({ key, dataIndex, render, cellCSS }) => {
       if (dataIndex == null) return;

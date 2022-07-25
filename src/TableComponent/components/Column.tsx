@@ -10,8 +10,11 @@ const Column = ({ children, isHeaderSticky }: ColumnProps) => {
   return (
     <th
       className={css`
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 12px 0;
         border-bottom: 1px solid #0b1424;
-        padding: 12px;
         background-color: #ffffff;
         font-weight: 300;
         flex: 1 1 0%;
