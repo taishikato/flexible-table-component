@@ -69,7 +69,7 @@ Error generating stack: `+i.message+`
         width: 300px;
         box-sizing: border-box;
         ${t?"position: sticky; z-index: 10; left: 0":""};
-      `,children:e});var Bb=P.exports.memo(_b),Xb="/assets/drag.8cb81982.svg";const Eb=({children:e})=>p0("td",{className:S1`
+      `,children:e});var Bb=P.exports.memo(_b),Xb="./assets/drag.8cb81982.svg";const Eb=({children:e})=>p0("td",{className:S1`
         border: 1px solid rgb(203 213 225);
         padding: 12px;
         font-weight: 600;
