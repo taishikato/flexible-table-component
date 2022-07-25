@@ -6,6 +6,7 @@ import "moment-timezone";
 import CellTemperatureCAboveMax from "./MyComponents/CellTemperatureCAboveMax";
 import CellTemperatureCInMax from "./MyComponents/CellTemperatureCInMax";
 import CellTemperatureCBelowMax from "./MyComponents/CellTemperatureCBelowMax";
+import CustomBodyThContent from "./MyComponents/CustomBodyThContent";
 import { CellProps } from "./MyComponents/CellProps";
 
 export type BanyanValueType =
@@ -61,8 +62,12 @@ const timezone = "America/Los_Angeles";
 
 const columns: ColumnProps[] = [
   {
-    key: "lastUpdate",
+    key: "valueName",
+    dataIndex: "valueName",
     title: "Last Update: June 14th, 10:00 AM",
+    render: (title) => {
+      return <CustomBodyThContent title={title} />;
+    },
   },
   ...dates.map((d) => {
     const momentOfDate = moment.tz(d, timezone);

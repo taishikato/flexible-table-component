@@ -2,7 +2,6 @@ import type { ColumnProps } from "../types";
 import { memo } from "react";
 import Column from "./Column";
 import FirstColumn from "./FirstColumn";
-import { css } from "@emotion/css";
 
 type HeaderRowProps = {
   columns: ColumnProps[];

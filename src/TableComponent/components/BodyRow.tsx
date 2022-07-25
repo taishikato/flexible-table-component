@@ -5,7 +5,6 @@ import { memo } from "react";
 import { animated, to } from "@react-spring/web";
 import BodyTh from "./BodyTh";
 import { css } from "@emotion/css";
-import drag from "../assets/drag.svg";
 import Td from "./Td";
 
 type BodyRowProps = {
@@ -55,15 +54,19 @@ const BodyRow = ({
       ),
     }}
   >
-    <BodyTh isFirstColSticky={isFirstColSticky}>
-      <>
-        <img src={drag} />
-        {data.name}
-      </>
-    </BodyTh>
-    {columns.map(({ key, dataIndex, render, cellCSS }) => {
+    {columns.map(({ key, dataIndex, render, cellCSS }, index) => {
       if (dataIndex == null) return;
 
+      // Columns for value names
+      if (index === 0) {
+        return (
+          <BodyTh isFirstColSticky={isFirstColSticky} key={key}>
+            {render ? render(data.name) : data.name}
+          </BodyTh>
+        );
+      }
+
+      // Columns for values
       if (render) return render(data[dataIndex], data, cellCSS);
 
       return <Td key={key}>{data[dataIndex]}</Td>;
