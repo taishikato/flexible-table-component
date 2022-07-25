@@ -1,13 +1,17 @@
 import { memo } from "react";
 import { css } from "@emotion/css";
 
-type BodyThProps = Readonly<{
+type BodyCellFirstProps = Readonly<{
   children: JSX.Element | string | number;
   isFirstColSticky: boolean;
   cellCSS?: Record<string, string | number>;
 }>;
 
-const BodyTh = ({ children, isFirstColSticky, cellCSS }: BodyThProps) => {
+const BodyCellFirst = ({
+  children,
+  isFirstColSticky,
+  cellCSS,
+}: BodyCellFirstProps) => {
   return (
     <th
       className={css`
@@ -29,4 +33,4 @@ const BodyTh = ({ children, isFirstColSticky, cellCSS }: BodyThProps) => {
   );
 };
 
-export default memo(BodyTh);
+export default memo(BodyCellFirst);

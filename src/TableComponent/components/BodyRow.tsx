@@ -3,7 +3,7 @@ import type { ReactDOMAttributes } from "@use-gesture/react/src/types";
 import type { DataProps, ColumnProps } from "../types";
 import { memo } from "react";
 import { animated, to } from "@react-spring/web";
-import BodyTh from "./BodyTh";
+import BodyCellFirst from "./BodyCellFirst";
 import { css } from "@emotion/css";
 import Td from "./Td";
 
@@ -60,13 +60,13 @@ const BodyRow = ({
       // Columns for value names
       if (index === 0) {
         return (
-          <BodyTh
+          <BodyCellFirst
             key={key}
             cellCSS={cellCSS}
             isFirstColSticky={isFirstColSticky}
           >
             {render ? render(data.name) : data.name}
-          </BodyTh>
+          </BodyCellFirst>
         );
       }
 

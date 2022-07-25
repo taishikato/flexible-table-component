@@ -1,7 +1,7 @@
 import type { ColumnProps } from "../types";
 import { memo } from "react";
-import Column from "./Column";
-import FirstColumn from "./FirstColumn";
+import HeaderCell from "./HeaderCell";
+import HeaderCellFirst from "./HeaderCellFirst";
 
 type HeaderRowProps = {
   columns: ColumnProps[];
@@ -20,19 +20,19 @@ const HeaderRow = ({
         {columns.map(({ title, render, key, cellCSS }, index) => {
           if (index === 0)
             return (
-              <FirstColumn
+              <HeaderCellFirst
                 key={key}
                 isHeaderSticky={isHeaderSticky}
                 isFirstColSticky={isFirstColSticky}
               >
                 {title}
-              </FirstColumn>
+              </HeaderCellFirst>
             );
 
           return (
-            <Column key={key} isHeaderSticky={isHeaderSticky}>
+            <HeaderCell key={key} isHeaderSticky={isHeaderSticky}>
               {title}
-            </Column>
+            </HeaderCell>
           );
         })}
       </tr>

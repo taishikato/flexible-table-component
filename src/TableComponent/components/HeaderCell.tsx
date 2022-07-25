@@ -6,7 +6,7 @@ export type ColumnProps = Readonly<{
   isHeaderSticky: boolean;
 }>;
 
-const Column = ({ children, isHeaderSticky }: ColumnProps) => {
+const HeaderCell = ({ children, isHeaderSticky }: ColumnProps) => {
   return (
     <th
       className={css`
@@ -24,4 +24,4 @@ const Column = ({ children, isHeaderSticky }: ColumnProps) => {
   );
 };
 
-export default memo(Column);
+export default memo(HeaderCell);

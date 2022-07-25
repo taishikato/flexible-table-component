@@ -5,7 +5,7 @@ import { memo } from "react";
 import { css } from "@emotion/css";
 import BodyRow from "./BodyRow";
 
-type BodyProps = {
+type BodyCellProps = {
   springs: {
     zIndex: SpringValue<string>;
     shadow: SpringValue<number>;
@@ -19,14 +19,14 @@ type BodyProps = {
   isFirstColSticky: boolean;
 };
 
-const Body = ({
+const BodyCell = ({
   springs,
   bind,
   itemHeight,
   data,
   columns,
   isFirstColSticky,
-}: BodyProps) => {
+}: BodyCellProps) => {
   return (
     <tbody
       className={css`
@@ -54,4 +54,4 @@ const Body = ({
   );
 };
 
-export default memo(Body);
+export default memo(BodyCell);
