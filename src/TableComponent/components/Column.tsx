@@ -11,6 +11,7 @@ const Column = ({ children, isHeaderSticky }: ColumnProps) => {
     <th
       className={css`
         display: flex;
+        min-width: 55px;
         align-items: center;
         justify-content: center;
         padding: 12px 0;

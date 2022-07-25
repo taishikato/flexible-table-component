@@ -7,11 +7,12 @@ const CellTemperatureCAboveMax = ({ val, row, cellCSS }: CellProps) => {
     <td
       className={css`
         display: flex;
+        flex: 1 1 0%;
+        min-width: 55px;
         align-items: center;
         justify-content: center;
         border: 1px solid rgb(203 213 225);
         font-weight: 600;
-        flex: 1 1 0%;
         box-sizing: border-box;
       `}
       style={cellCSS}
