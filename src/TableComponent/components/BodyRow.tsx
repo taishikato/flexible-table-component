@@ -54,7 +54,7 @@ const BodyRow = ({
       ),
     }}
   >
-    {columns.map(({ key, dataIndex, render, cellCSS }, index) => {
+    {columns.map(({ key, dataIndex, render, cellCSS, width }, index) => {
       if (dataIndex == null) return;
 
       // Columns for value names
@@ -64,6 +64,7 @@ const BodyRow = ({
             key={key}
             cellCSS={cellCSS}
             isFirstColSticky={isFirstColSticky}
+            width={width}
           >
             {render ? render(data.name) : data.name}
           </BodyCellFirst>
@@ -71,7 +72,7 @@ const BodyRow = ({
       }
 
       // Columns for values
-      if (render) return render(data[dataIndex], data, cellCSS);
+      if (render) return render(data[dataIndex], data, cellCSS, width);
 
       return (
         <Td key={key} cellCSS={cellCSS}>

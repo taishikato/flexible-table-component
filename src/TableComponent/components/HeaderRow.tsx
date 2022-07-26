@@ -17,20 +17,21 @@ const HeaderRow = ({
   return (
     <thead>
       <tr>
-        {columns.map(({ title, render, key, cellCSS }, index) => {
+        {columns.map(({ title, render, key, cellCSS, width }, index) => {
           if (index === 0)
             return (
               <HeaderCellFirst
                 key={key}
                 isHeaderSticky={isHeaderSticky}
                 isFirstColSticky={isFirstColSticky}
+                width={width}
               >
                 {title}
               </HeaderCellFirst>
             );
 
           return (
-            <HeaderCell key={key} isHeaderSticky={isHeaderSticky}>
+            <HeaderCell key={key} isHeaderSticky={isHeaderSticky} width={width}>
               {title}
             </HeaderCell>
           );

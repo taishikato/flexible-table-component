@@ -70,13 +70,16 @@ const columns: ColumnProps[] = [
       key: "valueName",
       dataIndex: "valueName",
       title: "Last Update: June 14th, 10:00 AM",
-      render,
+      // render,
+      width: "300px",
       cellCSS: { padding: "12px" },
     };
   })(),
   ...dates.map((d) => {
     const momentOfDate = moment.tz(d, timezone);
     const todayMoment = moment.tz(timezone);
+
+    const width = "55px";
 
     let cellCSS;
 
@@ -86,13 +89,22 @@ const columns: ColumnProps[] = [
     const render = (
       val: string,
       row: DataProps<BanyanValueType>,
-      cellCSS: any
+      cellCSS: any,
+      width: string
     ) => {
       const ComponentToUse = valueToRowRendererMapper[row.valueName];
 
       if (!ComponentToUse) return null;
 
-      return <ComponentToUse val={val} row={row} key={d} cellCSS={cellCSS} />;
+      return (
+        <ComponentToUse
+          val={val}
+          row={row}
+          key={d}
+          cellCSS={cellCSS}
+          width={width}
+        />
+      );
     };
 
     return {
@@ -101,6 +113,7 @@ const columns: ColumnProps[] = [
       title: momentOfDate.format("MMM D"),
       cellCSS,
       render,
+      width,
     };
   }),
 ];
@@ -115,7 +128,6 @@ function App() {
         columns={columns}
         isFirstColSticky
         isHeaderSticky
-        isTableFixed
         onDragEnd={() => console.log("hello")}
       />
     </div>

@@ -4,13 +4,14 @@ import { css } from "@emotion/css";
 export type ColumnProps = Readonly<{
   children: JSX.Element | string | number;
   isHeaderSticky: boolean;
+  width?: string | number;
 }>;
 
-const HeaderCell = ({ children, isHeaderSticky }: ColumnProps) => {
+const HeaderCell = ({ children, isHeaderSticky, width }: ColumnProps) => {
   return (
     <th
       className={css`
-        min-width: 55px;
+        min-width: ${width || undefined};
         text-align: center;
         padding: 12px 0;
         border-bottom: 1px solid #0b1424;

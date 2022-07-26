@@ -19,7 +19,7 @@ type BodyCellProps = {
   isFirstColSticky: boolean;
 };
 
-const BodyCell = ({
+const BodyRows = ({
   springs,
   bind,
   itemHeight,
@@ -54,4 +54,4 @@ const BodyCell = ({
   );
 };
 
-export default memo(BodyCell);
+export default memo(BodyRows);

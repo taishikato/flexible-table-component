@@ -2,8 +2,9 @@ export type ColumnProps = Readonly<{
   key: string;
   dataIndex?: string;
   title: string;
-  render?: (val: string, row: any, cellCSS?: any) => any;
+  render?: (...params: any[]) => any;
   cellCSS?: Record<string, string | number>;
+  width: string | number;
 }>;
 
 export type DataProps<VN extends string = ""> = Readonly<{

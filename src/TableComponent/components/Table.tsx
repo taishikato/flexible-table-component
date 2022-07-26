@@ -5,7 +5,7 @@ import { useSprings } from "@react-spring/web";
 import useBind from "../hooks/useBind";
 import { generateSpringsValues } from "../utils/generateSpringsValues";
 import HeaderRow from "./HeaderRow";
-import BodyCell from "./BodyCell";
+import BodyRows from "./BodyRows";
 
 export type TableProps = Readonly<{
   data: DataProps<any>[];
@@ -53,7 +53,6 @@ const Table = ({
         border-spacing: 0px 0px;
         position: relative;
         box-sizing: border-box;
-        ${isTableFixed ? "table-layout: fixed;" : ""}
       `}
     >
       <HeaderRow
@@ -61,7 +60,7 @@ const Table = ({
         isHeaderSticky={isHeaderSticky}
         isFirstColSticky={isFirstColSticky}
       />
-      <BodyCell
+      <BodyRows
         springs={springs}
         itemHeight={itemHeight}
         bind={bind}

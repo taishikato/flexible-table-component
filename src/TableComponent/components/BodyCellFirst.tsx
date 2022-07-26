@@ -5,24 +5,24 @@ type BodyCellFirstProps = Readonly<{
   children: JSX.Element | string | number;
   isFirstColSticky: boolean;
   cellCSS?: Record<string, string | number>;
+  width: string | number;
 }>;
 
 const BodyCellFirst = ({
   children,
   isFirstColSticky,
   cellCSS,
+  width,
 }: BodyCellFirstProps) => {
   return (
     <th
       className={css`
-        display: flex;
-        align-items: center;
+        min-width: ${width || undefined};
         flex-shrink: 0;
         padding-left: 10px;
         border: 1px solid rgb(203 213 225);
         background-color: #ffffff;
         font-weight: 300;
-        width: 300px;
         box-sizing: border-box;
         ${isFirstColSticky ? "position: sticky; z-index: 10; left: 0" : ""};
       `}
