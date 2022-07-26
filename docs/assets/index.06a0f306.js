@@ -72,12 +72,15 @@ Error generating stack: `+c.message+`
       font-weight: 300;
       box-sizing: border-box;
       ${t?"position: sticky; z-index: 10; left: 0; box-shadow: 3px 0px 2px rgba(0, 0, 0, 0.1);":""};
-    `,style:n,children:e});var Bb=P.exports.memo(_b);const Xb=({children:e})=>f0("td",{className:S1`
+    `,style:n,children:e});var Bb=P.exports.memo(_b);const Xb=({children:e,width:t})=>f0("td",{className:S1`
+        min-width: ${t||void 0};
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: 1 1 0%;
         border: 1px solid rgb(203 213 225);
-        padding: 12px;
         font-weight: 600;
         text-align: center;
-        // flex: 1 1 0%;
       `,children:e});var Eb=P.exports.memo(Xb);const Cb=({bind:e,data:t,columns:n,scale:r,shadow:i,y:c,zIndex:o,isFirstColSticky:a,itemHeight:s})=>f0(v4.tr,{...e,className:S1`
       touch-action: none;
       background-color: #ffffff;
@@ -88,7 +91,7 @@ Error generating stack: `+c.message+`
       display: flex;
       cursor: grab;
       box-sizing: border-box;
-    `,style:{zIndex:o,boxShadow:i.to(l=>`rgba(0, 0, 0, 0.15) 0px ${l}px ${2*l}px 0px`),transform:u4([c,r],(l,u)=>`translate3d(0,${l}px,0) scale(${u})`)},children:n.map(({key:l,dataIndex:u,render:M,cellCSS:A,width:O},z)=>{if(u!=null)return z===0?f0(Bb,{cellCSS:A,isFirstColSticky:a,width:O,children:M?M(t.name):t.name},l):M?M(t[u],t,A,O):f0(Eb,{children:t[u]},l)})});var kb=P.exports.memo(Cb);const Rb=({springs:e,bind:t,itemHeight:n,data:r,columns:i,isFirstColSticky:c})=>f0("tbody",{className:S1`
+    `,style:{zIndex:o,boxShadow:i.to(l=>`rgba(0, 0, 0, 0.15) 0px ${l}px ${2*l}px 0px`),transform:u4([c,r],(l,u)=>`translate3d(0,${l}px,0) scale(${u})`)},children:n.map(({key:l,dataIndex:u,render:M,cellCSS:A,width:O},z)=>{if(u!=null)return z===0?f0(Bb,{cellCSS:A,isFirstColSticky:a,width:O,children:M?M(t.name):t.name},l):M?M(t[u],t,A,O):f0(Eb,{width:O,children:t[u]},l)})});var kb=P.exports.memo(Cb);const Rb=({springs:e,bind:t,itemHeight:n,data:r,columns:i,isFirstColSticky:c})=>f0("tbody",{className:S1`
         position: relative;
         overflow: auto;
       `,children:e.map(({zIndex:o,shadow:a,y:s,scale:l},u)=>f0(kb,{bind:t(u),zIndex:o,shadow:a,itemHeight:n,y:s,scale:l,data:r[u],columns:i,isFirstColSticky:c},u))});var xb=P.exports.memo(Rb);const Pb=({data:e,columns:t,height:n="auto",rowHeight:r=50,isHeaderSticky:i=!1,isFirstColSticky:c=!1,onDragEnd:o})=>{const a=P.exports.useRef(e.map((M,A)=>A)),[s,l]=s4(a.current.length,Zd({order:a.current,itemHeight:r})),u=bb({springsApi:l,itemHeight:r,order:a.current,dataLength:e.length,callBack:M=>{a.current=M,o()}});return tp("table",{className:S1`
@@ -119,7 +122,6 @@ w.version="2.29.4";Ib(a0);w.fn=q;w.min=WO;w.max=SO;w.now=wO;w.utc=oe;w.unix=i5;w
         flex: 1 1 0%;
         font-weight: 600;
         box-sizing: border-box;
-        text-align: center;
         min-width: ${r||void 0};
         border-bottom: 1px solid rgb(203 213 225);
         &:not(:last-child) {
@@ -132,7 +134,6 @@ w.version="2.29.4";Ib(a0);w.fn=q;w.min=WO;w.max=SO;w.now=wO;w.utc=oe;w.unix=i5;w
         flex: 1 1 0%;
         font-weight: 600;
         box-sizing: border-box;
-        text-align: center;
         min-width: ${r||void 0};
         border-bottom: 1px solid rgb(203 213 225);
         &:not(:last-child) {
@@ -145,7 +146,6 @@ w.version="2.29.4";Ib(a0);w.fn=q;w.min=WO;w.max=SO;w.now=wO;w.utc=oe;w.unix=i5;w
         flex: 1 1 0%;
         font-weight: 600;
         box-sizing: border-box;
-        text-align: center;
         min-width: ${r||void 0};
         border-bottom: 1px solid rgb(203 213 225);
         &:not(:last-child) {
