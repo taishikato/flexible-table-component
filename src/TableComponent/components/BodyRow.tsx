@@ -74,7 +74,11 @@ const BodyRow = ({
       // Columns for values
       if (render) return render(data[dataIndex], data, cellCSS, width);
 
-      return <BodyCell key={key}>{data[dataIndex]}</BodyCell>;
+      return (
+        <BodyCell key={key} width={width}>
+          {data[dataIndex]}
+        </BodyCell>
+      );
     })}
   </animated.tr>
 );
