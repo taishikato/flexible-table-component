@@ -19,6 +19,7 @@ const BodyCellFirst = ({
       className={css`
         min-width: ${width || undefined};
         vertical-align: middle;
+        text-align: left;
         flex-shrink: 0;
         padding-left: 10px;
         border: 1px solid rgb(203 213 225);
