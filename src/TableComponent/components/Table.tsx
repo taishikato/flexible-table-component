@@ -10,18 +10,20 @@ import BodyRows from "./BodyRows";
 export type TableProps = Readonly<{
   data: DataProps<any>[];
   columns: ColumnProps[];
+  height?: string;
+  itemHeight?: number;
   isHeaderSticky?: boolean;
   isFirstColSticky?: boolean;
-  itemHeight?: number;
   onDragEnd: (args?: unknown) => unknown;
 }>;
 
 const Table = ({
   data,
   columns,
+  height = "auto",
+  itemHeight = 46,
   isHeaderSticky = false,
   isFirstColSticky = false,
-  itemHeight = 46,
   onDragEnd,
 }: TableProps) => {
   const order = useRef(data.map((_: any, index: number) => index));
@@ -46,7 +48,7 @@ const Table = ({
     <table
       className={css`
         width: 100%;
-        height: 500px;
+        height: ${height};
         border-collapse: separate;
         border-spacing: 0px 0px;
         position: relative;

@@ -126,6 +126,7 @@ function App() {
       <Table
         data={tableData}
         columns={columns}
+        height="500px"
         isFirstColSticky
         isHeaderSticky
         onDragEnd={() => console.log("hello")}
