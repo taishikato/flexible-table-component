@@ -7,7 +7,7 @@ type TdProps = {
 
 const BodyCell = ({ children }: TdProps) => {
   return (
-    <BodyCell
+    <td
       className={css`
         border: 1px solid rgb(203 213 225);
         padding: 12px;
@@ -17,7 +17,7 @@ const BodyCell = ({ children }: TdProps) => {
       `}
     >
       {children}
-    </BodyCell>
+    </td>
   );
 };
 

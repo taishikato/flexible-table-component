@@ -5,7 +5,7 @@ type FirstColumnProps = Readonly<{
   children: JSX.Element | string | number;
   isHeaderSticky: boolean;
   isFirstColSticky: boolean;
-  width: number;
+  width: number | string;
 }>;
 
 const FirstColumn = ({
