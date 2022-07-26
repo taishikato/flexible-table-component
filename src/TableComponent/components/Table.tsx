@@ -14,6 +14,7 @@ export type TableProps = Readonly<{
   rowHeight?: number;
   isHeaderSticky?: boolean;
   isFirstColSticky?: boolean;
+  headerRowCellCSS?: Record<string, string | number>;
   onDragEnd: (args?: unknown) => unknown;
 }>;
 
@@ -24,6 +25,7 @@ const Table = ({
   rowHeight = 50,
   isHeaderSticky = false,
   isFirstColSticky = false,
+  headerRowCellCSS = {},
   onDragEnd,
 }: TableProps) => {
   const order = useRef(data.map((_: any, index: number) => index));
@@ -57,6 +59,7 @@ const Table = ({
     >
       <HeaderRow
         columns={columns}
+        headerRowCellCSS={headerRowCellCSS}
         isHeaderSticky={isHeaderSticky}
         isFirstColSticky={isFirstColSticky}
       />

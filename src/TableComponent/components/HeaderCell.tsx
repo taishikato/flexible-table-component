@@ -4,10 +4,16 @@ import { css } from "@emotion/css";
 export type ColumnProps = Readonly<{
   children: JSX.Element | string | number;
   isHeaderSticky: boolean;
+  headerRowCellCSS: Record<string, string | number>;
   width?: string | number;
 }>;
 
-const HeaderCell = ({ children, isHeaderSticky, width }: ColumnProps) => {
+const HeaderCell = ({
+  children,
+  isHeaderSticky,
+  width,
+  headerRowCellCSS,
+}: ColumnProps) => {
   return (
     <th
       className={css`
@@ -20,6 +26,7 @@ const HeaderCell = ({ children, isHeaderSticky, width }: ColumnProps) => {
         font-weight: 300;
         ${isHeaderSticky ? "position: sticky; top: 0; z-index: 10;" : ""}
       `}
+      style={headerRowCellCSS}
     >
       {children}
     </th>

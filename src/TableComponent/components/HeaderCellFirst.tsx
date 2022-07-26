@@ -6,6 +6,7 @@ type FirstColumnProps = Readonly<{
   isHeaderSticky: boolean;
   isFirstColSticky: boolean;
   width: number | string;
+  headerRowCellCSS: Record<string, string | number>;
 }>;
 
 const FirstColumn = ({
@@ -13,6 +14,7 @@ const FirstColumn = ({
   isHeaderSticky,
   isFirstColSticky,
   width,
+  headerRowCellCSS,
 }: FirstColumnProps) => {
   return (
     <th
@@ -36,6 +38,7 @@ const FirstColumn = ({
           ? "position: sticky; left: 0; z-index: 20;"
           : ""}
       `}
+      style={headerRowCellCSS}
     >
       {children}
     </th>

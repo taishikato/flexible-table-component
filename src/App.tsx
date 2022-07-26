@@ -70,7 +70,7 @@ const columns: ColumnProps[] = [
       key: "valueName",
       dataIndex: "valueName",
       title: "Last Update: June 14th, 10:00 AM",
-      // render,
+      render,
       width: "300px",
       cellCSS: { padding: "12px" },
     };
@@ -129,6 +129,7 @@ function App() {
         height="500px"
         isFirstColSticky
         isHeaderSticky
+        headerRowCellCSS={{ fontWeight: 900 }}
         onDragEnd={() => console.log("hello")}
       />
     </div>

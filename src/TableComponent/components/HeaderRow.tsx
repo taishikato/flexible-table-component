@@ -8,10 +8,12 @@ type HeaderRowProps = {
   columns: ColumnProps[];
   isHeaderSticky: boolean;
   isFirstColSticky: boolean;
+  headerRowCellCSS: Record<string, string | number>;
 };
 
 const HeaderRow = ({
   columns,
+  headerRowCellCSS,
   isHeaderSticky,
   isFirstColSticky,
 }: HeaderRowProps) => {
@@ -30,13 +32,19 @@ const HeaderRow = ({
                 isHeaderSticky={isHeaderSticky}
                 isFirstColSticky={isFirstColSticky}
                 width={width}
+                headerRowCellCSS={headerRowCellCSS}
               >
                 {title}
               </HeaderCellFirst>
             );
 
           return (
-            <HeaderCell key={key} isHeaderSticky={isHeaderSticky} width={width}>
+            <HeaderCell
+              key={key}
+              isHeaderSticky={isHeaderSticky}
+              width={width}
+              headerRowCellCSS={headerRowCellCSS}
+            >
               {title}
             </HeaderCell>
           );
