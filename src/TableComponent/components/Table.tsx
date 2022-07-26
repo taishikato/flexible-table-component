@@ -11,7 +11,7 @@ export type TableProps = Readonly<{
   data: DataProps<any>[];
   columns: ColumnProps[];
   height?: string;
-  itemHeight?: number;
+  rowHeight?: number;
   isHeaderSticky?: boolean;
   isFirstColSticky?: boolean;
   onDragEnd: (args?: unknown) => unknown;
@@ -21,7 +21,7 @@ const Table = ({
   data,
   columns,
   height = "auto",
-  itemHeight = 46,
+  rowHeight = 50,
   isHeaderSticky = false,
   isFirstColSticky = false,
   onDragEnd,
@@ -30,12 +30,12 @@ const Table = ({
 
   const [springs, api] = useSprings(
     order.current.length,
-    generateSpringsValues({ order: order.current, itemHeight })
+    generateSpringsValues({ order: order.current, itemHeight: rowHeight })
   );
 
   const bind = useBind({
     springsApi: api,
-    itemHeight,
+    itemHeight: rowHeight,
     order: order.current,
     dataLength: data.length,
     callBack: (newOrder) => {
@@ -62,7 +62,7 @@ const Table = ({
       />
       <BodyRows
         springs={springs}
-        itemHeight={itemHeight}
+        itemHeight={rowHeight}
         bind={bind}
         data={data}
         columns={columns}
