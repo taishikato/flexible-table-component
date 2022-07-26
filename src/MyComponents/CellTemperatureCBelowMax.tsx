@@ -10,11 +10,14 @@ const CellTemperatureCBelowMax = ({ val, row, cellCSS, width }: CellProps) => {
         align-items: center;
         justify-content: center;
         flex: 1 1 0%;
-        border: 1px solid rgb(203 213 225);
         font-weight: 600;
         box-sizing: border-box;
         text-align: center;
         min-width: ${width || undefined};
+        border-bottom: 1px solid rgb(203 213 225);
+        &:not(:last-child) {
+          border-right: 1px solid rgb(203 213 225);
+        }
       `}
       style={cellCSS}
     >
