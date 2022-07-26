@@ -62,17 +62,17 @@ Error generating stack: `+c.message+`
       `,children:e});var Wb=P.exports.memo(Tb);const Sb=({columns:e,isHeaderSticky:t,isFirstColSticky:n})=>f0("thead",{children:f0("tr",{className:S1`
           width: 100%;
         `,children:e.map(({title:r,render:i,key:c,cellCSS:o,width:a},s)=>s===0?f0(Wb,{isHeaderSticky:t,isFirstColSticky:n,width:a,children:r},c):f0(qb,{isHeaderSticky:t,width:a,children:r},c))})});var wb=P.exports.memo(Sb);const _b=({children:e,isFirstColSticky:t,cellCSS:n,width:r})=>f0("th",{className:S1`
-        min-width: ${r||void 0};
-        vertical-align: middle;
-        text-align: left;
-        flex-shrink: 0;
-        padding-left: 10px;
-        border: 1px solid rgb(203 213 225);
-        background-color: #ffffff;
-        font-weight: 300;
-        box-sizing: border-box;
-        ${t?"position: sticky; z-index: 10; left: 0":""};
-      `,style:n,children:e});var Bb=P.exports.memo(_b);const Xb=({children:e})=>f0("td",{className:S1`
+      min-width: ${r||void 0};
+      display: flex;
+      align-items: center;
+      padding-left: 10px;
+      border-bottom: 1px solid rgb(203 213 225);
+      border-right: 1px solid rgb(203 213 225);
+      background-color: #ffffff;
+      font-weight: 300;
+      box-sizing: border-box;
+      ${t?"position: sticky; z-index: 10; left: 0; box-shadow: 3px 0px 2px rgba(0, 0, 0, 0.1);":""};
+    `,style:n,children:e});var Bb=P.exports.memo(_b);const Xb=({children:e})=>f0("td",{className:S1`
         border: 1px solid rgb(203 213 225);
         padding: 12px;
         font-weight: 600;
@@ -91,14 +91,14 @@ Error generating stack: `+c.message+`
     `,style:{zIndex:o,boxShadow:i.to(l=>`rgba(0, 0, 0, 0.15) 0px ${l}px ${2*l}px 0px`),transform:u4([c,r],(l,u)=>`translate3d(0,${l}px,0) scale(${u})`)},children:n.map(({key:l,dataIndex:u,render:M,cellCSS:A,width:O},z)=>{if(u!=null)return z===0?f0(Bb,{cellCSS:A,isFirstColSticky:a,width:O,children:M?M(t.name):t.name},l):M?M(t[u],t,A,O):f0(Eb,{children:t[u]},l)})});var kb=P.exports.memo(Cb);const Rb=({springs:e,bind:t,itemHeight:n,data:r,columns:i,isFirstColSticky:c})=>f0("tbody",{className:S1`
         position: relative;
         overflow: auto;
-      `,children:e.map(({zIndex:o,shadow:a,y:s,scale:l},u)=>f0(kb,{bind:t(u),zIndex:o,shadow:a,itemHeight:n,y:s,scale:l,data:r[u],columns:i,isFirstColSticky:c},u))});var xb=P.exports.memo(Rb);const Pb=({data:e,columns:t,isHeaderSticky:n=!1,isFirstColSticky:r=!1,isTableFixed:i=!1,itemHeight:c=46,onDragEnd:o})=>{const a=P.exports.useRef(e.map((M,A)=>A)),[s,l]=s4(a.current.length,Zd({order:a.current,itemHeight:c})),u=bb({springsApi:l,itemHeight:c,order:a.current,dataLength:e.length,callBack:M=>{a.current=M,o()}});return tp("table",{className:S1`
+      `,children:e.map(({zIndex:o,shadow:a,y:s,scale:l},u)=>f0(kb,{bind:t(u),zIndex:o,shadow:a,itemHeight:n,y:s,scale:l,data:r[u],columns:i,isFirstColSticky:c},u))});var xb=P.exports.memo(Rb);const Pb=({data:e,columns:t,height:n="auto",rowHeight:r=50,isHeaderSticky:i=!1,isFirstColSticky:c=!1,onDragEnd:o})=>{const a=P.exports.useRef(e.map((M,A)=>A)),[s,l]=s4(a.current.length,Zd({order:a.current,itemHeight:r})),u=bb({springsApi:l,itemHeight:r,order:a.current,dataLength:e.length,callBack:M=>{a.current=M,o()}});return tp("table",{className:S1`
         width: 100%;
-        height: 500px;
+        height: ${n};
         border-collapse: separate;
         border-spacing: 0px 0px;
         position: relative;
         box-sizing: border-box;
-      `,children:[f0(wb,{columns:t,isHeaderSticky:n,isFirstColSticky:r}),f0(xb,{springs:s,itemHeight:c,bind:u,data:e,columns:t,isFirstColSticky:r})]})};var Db=P.exports.memo(Pb);//! moment.js
+      `,children:[f0(wb,{columns:t,isHeaderSticky:i,isFirstColSticky:c}),f0(xb,{springs:s,itemHeight:r,bind:u,data:e,columns:t,isFirstColSticky:c})]})};var Db=P.exports.memo(Pb);//! moment.js
 //! version : 2.29.4
 //! authors : Tim Wood, Iskren Chernev, Moment.js contributors
 //! license : MIT
@@ -117,33 +117,42 @@ w.version="2.29.4";Ib(a0);w.fn=q;w.min=WO;w.max=SO;w.now=wO;w.utc=oe;w.unix=i5;w
         align-items: center;
         justify-content: center;
         flex: 1 1 0%;
-        border: 1px solid rgb(203 213 225);
         font-weight: 600;
         box-sizing: border-box;
         text-align: center;
         min-width: ${r||void 0};
+        border-bottom: 1px solid rgb(203 213 225);
+        &:not(:last-child) {
+          border-right: 1px solid rgb(203 213 225);
+        }
       `,style:n,children:e});var $5=P.exports.memo(K5);const Q5=({val:e,row:t,cellCSS:n,width:r})=>f0("td",{className:S1`
         display: flex;
         align-items: center;
         justify-content: center;
         flex: 1 1 0%;
-        border: 1px solid rgb(203 213 225);
         font-weight: 600;
         box-sizing: border-box;
         text-align: center;
         min-width: ${r||void 0};
+        border-bottom: 1px solid rgb(203 213 225);
+        &:not(:last-child) {
+          border-right: 1px solid rgb(203 213 225);
+        }
       `,style:n,children:e});var J5=P.exports.memo(Q5);const Z5=({val:e,row:t,cellCSS:n,width:r})=>f0("td",{className:S1`
         display: flex;
         align-items: center;
         justify-content: center;
         flex: 1 1 0%;
-        border: 1px solid rgb(203 213 225);
         font-weight: 600;
         box-sizing: border-box;
         text-align: center;
         min-width: ${r||void 0};
+        border-bottom: 1px solid rgb(203 213 225);
+        &:not(:last-child) {
+          border-right: 1px solid rgb(203 213 225);
+        }
       `,style:n,children:e});var eL=P.exports.memo(Z5),tL="./assets/drag.8cb81982.svg";const nL=({title:e})=>tp("div",{className:S1`
         display: flex;
         align-items: center;
         column-gap: 0.75rem;
-      `,children:[f0("img",{src:tL}),e]});P.exports.memo(nL);const rL={temperature_c_above_max:$5,temperature_c_in_max:J5,temperature_c_below_max:eL},iL=["2022-07-20T08:00:00.000Z","2022-07-21T08:00:00.000Z","2022-07-22T08:00:00.000Z","2022-07-23T08:00:00.000Z","2022-07-24T08:00:00.000Z"],cL=[{name:"Temperature - Above Canopy Max",valueName:"temperature_c_above_max","2022-07-20T08:00:00.000Z":"85.5\xB0F","2022-07-21T08:00:00.000Z":"85.5\xB0F","2022-07-22T08:00:00.000Z":"89.5\xB0F","2022-07-23T08:00:00.000Z":"83.5\xB0F","2022-07-24T08:00:00.000Z":"82.5\xB0F"},{name:"Temperature - In Canopy Max",valueName:"temperature_c_in_max","2022-07-20T08:00:00.000Z":"86.3\xB0F","2022-07-21T08:00:00.000Z":"85.5\xB0F","2022-07-22T08:00:00.000Z":"86.2\xB0F","2022-07-23T08:00:00.000Z":"87.5\xB0F","2022-07-24T08:00:00.000Z":"83.2\xB0F"},{name:"Temperature - Below Canopy Max",valueName:"temperature_c_below_max","2022-07-20T08:00:00.000Z":"88.3\xB0F","2022-07-21T08:00:00.000Z":"89.5\xB0F","2022-07-22T08:00:00.000Z":"87.2\xB0F","2022-07-23T08:00:00.000Z":"87.5\xB0F","2022-07-24T08:00:00.000Z":"84.2\xB0F"}],G2="America/Los_Angeles",oL=[(()=>({key:"valueName",dataIndex:"valueName",title:"Last Update: June 14th, 10:00 AM",width:"300px",cellCSS:{padding:"12px"}}))(),...iL.map(e=>{const t=w.tz(e,G2),n=w.tz(G2),r="55px";let i;n.isSame(t,"day")&&(i={background:"blue",color:"#ffffff"});const c=(o,a,s,l)=>{const u=rL[a.valueName];return u?f0(u,{val:o,row:a,cellCSS:s,width:l},e):null};return{key:e,dataIndex:e,title:t.format("MMM D"),cellCSS:i,render:c,width:r}})];function aL(){const[e,t]=P.exports.useState(cL);return f0("div",{style:{minWidth:"400px",maxWidth:"600px",margin:"0 auto"},children:f0(Db,{data:e,columns:oL,isFirstColSticky:!0,isHeaderSticky:!0,onDragEnd:()=>console.log("hello")})})}Go.createRoot(document.getElementById("root")).render(f0(zi.StrictMode,{children:f0(aL,{})}))});export default sL();
+      `,children:[f0("img",{src:tL}),e]});P.exports.memo(nL);const rL={temperature_c_above_max:$5,temperature_c_in_max:J5,temperature_c_below_max:eL},iL=["2022-07-20T08:00:00.000Z","2022-07-21T08:00:00.000Z","2022-07-22T08:00:00.000Z","2022-07-23T08:00:00.000Z","2022-07-24T08:00:00.000Z"],cL=[{name:"Temperature - Above Canopy Max",valueName:"temperature_c_above_max","2022-07-20T08:00:00.000Z":"85.5\xB0F","2022-07-21T08:00:00.000Z":"85.5\xB0F","2022-07-22T08:00:00.000Z":"89.5\xB0F","2022-07-23T08:00:00.000Z":"83.5\xB0F","2022-07-24T08:00:00.000Z":"82.5\xB0F"},{name:"Temperature - In Canopy Max",valueName:"temperature_c_in_max","2022-07-20T08:00:00.000Z":"86.3\xB0F","2022-07-21T08:00:00.000Z":"85.5\xB0F","2022-07-22T08:00:00.000Z":"86.2\xB0F","2022-07-23T08:00:00.000Z":"87.5\xB0F","2022-07-24T08:00:00.000Z":"83.2\xB0F"},{name:"Temperature - Below Canopy Max",valueName:"temperature_c_below_max","2022-07-20T08:00:00.000Z":"88.3\xB0F","2022-07-21T08:00:00.000Z":"89.5\xB0F","2022-07-22T08:00:00.000Z":"87.2\xB0F","2022-07-23T08:00:00.000Z":"87.5\xB0F","2022-07-24T08:00:00.000Z":"84.2\xB0F"}],G2="America/Los_Angeles",oL=[(()=>({key:"valueName",dataIndex:"valueName",title:"Last Update: June 14th, 10:00 AM",width:"300px",cellCSS:{padding:"12px"}}))(),...iL.map(e=>{const t=w.tz(e,G2),n=w.tz(G2),r="55px";let i;n.isSame(t,"day")&&(i={background:"blue",color:"#ffffff"});const c=(o,a,s,l)=>{const u=rL[a.valueName];return u?f0(u,{val:o,row:a,cellCSS:s,width:l},e):null};return{key:e,dataIndex:e,title:t.format("MMM D"),cellCSS:i,render:c,width:r}})];function aL(){const[e,t]=P.exports.useState(cL);return f0("div",{style:{minWidth:"400px",maxWidth:"600px",margin:"0 auto"},children:f0(Db,{data:e,columns:oL,height:"500px",isFirstColSticky:!0,isHeaderSticky:!0,onDragEnd:()=>console.log("hello")})})}Go.createRoot(document.getElementById("root")).render(f0(zi.StrictMode,{children:f0(aL,{})}))});export default sL();
