@@ -25,7 +25,9 @@ const BodyCellFirst = ({
       background-color: #ffffff;
       font-weight: 300;
       box-sizing: border-box;
-      ${isFirstColSticky ? "position: sticky; z-index: 10; left: 0" : ""};
+      ${isFirstColSticky
+        ? "position: sticky; z-index: 10; left: 0; box-shadow: 3px 0px 2px rgba(0, 0, 0, 0.1);"
+        : ""};
     `}
     style={cellCSS}
   >
