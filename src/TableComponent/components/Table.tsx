@@ -12,7 +12,6 @@ export type TableProps = Readonly<{
   columns: ColumnProps[];
   isHeaderSticky?: boolean;
   isFirstColSticky?: boolean;
-  isTableFixed?: boolean;
   itemHeight?: number;
   onDragEnd: (args?: unknown) => unknown;
 }>;
@@ -22,7 +21,6 @@ const Table = ({
   columns,
   isHeaderSticky = false,
   isFirstColSticky = false,
-  isTableFixed = false,
   itemHeight = 46,
   onDragEnd,
 }: TableProps) => {
