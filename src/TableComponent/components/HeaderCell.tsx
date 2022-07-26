@@ -13,6 +13,7 @@ const HeaderCell = ({ children, isHeaderSticky, width }: ColumnProps) => {
       className={css`
         min-width: ${width || undefined};
         text-align: center;
+        vertical-align: middle;
         padding: 12px 0;
         border-bottom: 1px solid #0b1424;
         background-color: #ffffff;

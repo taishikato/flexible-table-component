@@ -17,10 +17,11 @@ const FirstColumn = ({
   return (
     <th
       className={css`
+        width: ${width || undefined};
         min-width: ${width || undefined};
         text-align: left;
         position: relative;
-        flex-shrink: 0;
+        vertical-align: middle;
         border-bottom: 1px solid #0b1424;
         font-weight: 600;
         background-color: #ffffff;
