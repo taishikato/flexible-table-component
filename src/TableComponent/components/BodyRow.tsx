@@ -5,7 +5,7 @@ import { memo } from "react";
 import { animated, to } from "@react-spring/web";
 import BodyCellFirst from "./BodyCellFirst";
 import { css } from "@emotion/css";
-import Td from "./Td";
+import BodyCell from "./BodyCell";
 
 type BodyRowProps = {
   data: DataProps;
@@ -75,9 +75,9 @@ const BodyRow = ({
       if (render) return render(data[dataIndex], data, cellCSS, width);
 
       return (
-        <Td key={key} cellCSS={cellCSS}>
+        <BodyCell key={key} cellCSS={cellCSS}>
           {data[dataIndex]}
-        </Td>
+        </BodyCell>
       );
     })}
   </animated.tr>

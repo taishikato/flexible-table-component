@@ -5,9 +5,9 @@ type TdProps = {
   children: JSX.Element | string | number;
 };
 
-const Td = ({ children }: TdProps) => {
+const BodyCell = ({ children }: TdProps) => {
   return (
-    <td
+    <BodyCell
       className={css`
         border: 1px solid rgb(203 213 225);
         padding: 12px;
@@ -17,8 +17,8 @@ const Td = ({ children }: TdProps) => {
       `}
     >
       {children}
-    </td>
+    </BodyCell>
   );
 };
 
-export default memo(Td);
+export default memo(BodyCell);
