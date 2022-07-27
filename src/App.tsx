@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useState } from "react";
 import { Table } from "./TableComponent";
 import type { ColumnProps, DataProps } from "./TableComponent";
@@ -129,6 +130,9 @@ function App() {
 
   return (
     <div style={{ minWidth: "400px", maxWidth: "600px", margin: "0 auto" }}>
+      <div style={{ margin: "15px 0" }}>
+        <Link to="/simpler">Go to the simpler table</Link>
+      </div>
       <Table
         data={tableData}
         columns={columns}
