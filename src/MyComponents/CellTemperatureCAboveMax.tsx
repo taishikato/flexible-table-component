@@ -11,6 +11,7 @@ const CellTemperatureCAboveMax = ({ val, row, cellCSS, width }: CellProps) => {
         justify-content: center;
         flex: 1 1 0%;
         font-weight: 600;
+        user-select: none;
         box-sizing: border-box;
         min-width: ${width || undefined};
         border-bottom: 1px solid rgb(203 213 225);

@@ -20,6 +20,7 @@ const BodyCellFirst = ({
       display: flex;
       align-items: center;
       padding-left: 10px;
+      user-select: none;
       border-bottom: 1px solid rgb(203 213 225);
       border-right: 1px solid rgb(203 213 225);
       background-color: #ffffff;
