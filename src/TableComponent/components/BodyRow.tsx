@@ -72,11 +72,11 @@ const BodyRow = ({
       }
 
       // Columns for values
-      if (render) return render(data[dataIndex], data, cellCSS, width);
+      if (render) return render(data.values[dataIndex], data, cellCSS, width);
 
       return (
         <BodyCell key={key} width={width}>
-          {data[dataIndex]}
+          {data.values[dataIndex]}
         </BodyCell>
       );
     })}

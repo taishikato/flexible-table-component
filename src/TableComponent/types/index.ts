@@ -9,6 +9,6 @@ export type ColumnProps = Readonly<{
 
 export type DataProps<VN extends string = ""> = Readonly<{
   name: string;
-  [timestamp: string]: string;
   valueName: VN;
+  values: { [timestamp: string]: string };
 }>;
