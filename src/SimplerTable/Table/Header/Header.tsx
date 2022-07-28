@@ -1,5 +1,5 @@
 import { memo } from "react";
-import FirstCell from "./FirstCell/FIrstCell";
+import FirstCell from "./FirstCell/FirstCell";
 import Cell from "./Cell/Cell";
 
 const Header = () => {
