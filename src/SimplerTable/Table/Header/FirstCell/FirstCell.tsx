@@ -9,6 +9,7 @@ const FirstCell = ({
   return (
     <th
       className={css`
+        min-width: 150px;
         vertical-align: middle;
         padding: 10px 10px 10px 0;
         text-align: left;
