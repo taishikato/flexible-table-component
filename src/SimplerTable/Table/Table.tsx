@@ -1,4 +1,5 @@
 import { css } from "@emotion/css";
+import Header from "./Header/Header";
 
 const Table = () => {
   return (
@@ -9,90 +10,7 @@ const Table = () => {
         box-sizing: border-box;
       `}
     >
-      <thead>
-        <tr>
-          <th
-            className={css`
-              vertical-align: middle;
-              padding: 10px 10px 10px 0;
-              text-align: left;
-              border-bottom: 1px solid #0b1424;
-              position: sticky;
-              top: 0px;
-              left: 0;
-              z-index: 20;
-              background-color: #ffffff;
-            `}
-          >
-            Last Update: June 14th, 10:00 AM
-          </th>
-          <th
-            className={css`
-              vertical-align: middle;
-              padding: 10px;
-              border-bottom: 1px solid #0b1424;
-              position: sticky;
-              top: 0;
-              z-index: 10;
-              background-color: #ffffff;
-            `}
-          >
-            Jul 20
-          </th>
-          <th
-            className={css`
-              vertical-align: middle;
-              padding: 10px;
-              border-bottom: 1px solid #0b1424;
-              position: sticky;
-              top: 0;
-              z-index: 10;
-              background-color: #ffffff;
-            `}
-          >
-            Jul 21
-          </th>
-          <th
-            className={css`
-              vertical-align: middle;
-              padding: 10px;
-              border-bottom: 1px solid #0b1424;
-              position: sticky;
-              top: 0;
-              z-index: 10;
-              background-color: #ffffff;
-            `}
-          >
-            Jul 22
-          </th>
-          <th
-            className={css`
-              vertical-align: middle;
-              padding: 10px;
-              border-bottom: 1px solid #0b1424;
-              position: sticky;
-              top: 0;
-              z-index: 10;
-              background-color: #ffffff;
-            `}
-          >
-            Jul 23
-          </th>
-          <th
-            className={css`
-              vertical-align: middle;
-              padding: 10px;
-              border-bottom: 1px solid #0b1424;
-              position: sticky;
-              top: 0;
-              z-index: 10;
-              background-color: #ffffff;
-            `}
-          >
-            Jul 24
-          </th>
-        </tr>
-      </thead>
+      <Header />
       <tbody>
         <tr>
           <th
