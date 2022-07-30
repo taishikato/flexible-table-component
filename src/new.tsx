@@ -1,21 +1,7 @@
-import { Link } from "react-router-dom";
+import { memo } from "react";
+import Table from "./NewTableComponent/table";
 
-const Simpler = () => {
-  return (
-    <div
-      style={{
-        minWidth: "400px",
-        maxWidth: "700px",
-        margin: "0 auto",
-        overflow: "auto",
-      }}
-    >
-      <div style={{ margin: "15px 0" }}>
-        <Link to="/">Go to the old table</Link>
-      </div>
-      <Table />
-    </div>
-  );
+const New = () => {
+  return <Table />;
 };
-
-export default Simpler;
+export default memo(New);
