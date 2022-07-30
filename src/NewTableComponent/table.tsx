@@ -32,7 +32,6 @@ const Table = () => {
         <table
           className={css`
             width: 100%;
-            height: 700px;
             border-collapse: separate;
             border-spacing: 0px 0px;
             position: relative;
@@ -49,7 +48,7 @@ const Table = () => {
                   <img
                     src="https://www.macleans.ca/wp-content/uploads/2019/11/BABY-YODA-MANDALORIAN-NOV19-810x445.jpg"
                     className={css`
-                      width: 300px;
+                      width: 100px;
                       border-radius: 10px;
                     `}
                   />

@@ -28,9 +28,15 @@ export const useDnDSort = <T>(defaultItems: T[]): DnDSortResult<T>[] => {
     const dragStyle = dragElement.element.style;
 
     // ドラッグ要素の座標とスタイルを更新
-    dragStyle.zIndex = "100";
+    dragStyle.zIndex = "1";
     dragStyle.cursor = "grabbing";
     dragStyle.transform = `translate(${x}px,${y}px)`;
+
+    // const th = dragElement.element.querySelector("th");
+
+    // const thStyle = th?.style;
+
+    // if (thStyle) thStyle.position = "static";
 
     if (!state.canCheckHovered) return;
 
@@ -82,6 +88,7 @@ export const useDnDSort = <T>(defaultItems: T[]): DnDSortResult<T>[] => {
     state.dragElement = null;
 
     window.removeEventListener("mouseup", onPointerUp);
+    // @ts-ignore
     window.removeEventListener("mousemove", onPointerMove);
   };
 
