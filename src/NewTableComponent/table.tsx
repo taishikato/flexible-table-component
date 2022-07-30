@@ -41,7 +41,7 @@ const Table = () => {
         >
           <Header />
           <tbody>
-            {results.map((item, index) => (
+            {results.map((item) => (
               <tr key={item.key} {...item.events}>
                 <FirstCell>{item.value}</FirstCell>
                 <Cell>Cell Content</Cell>
