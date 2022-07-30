@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import App from "./App";
-import Simpler from "./simpler";
+import New from "./new";
 import "./reset.css";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
@@ -10,7 +10,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />} />
-        <Route path="/simpler" element={<Simpler />} />
+        <Route path="/new" element={<New />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
