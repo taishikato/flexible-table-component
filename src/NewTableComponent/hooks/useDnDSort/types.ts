@@ -26,6 +26,6 @@ export interface DnDSortResult<T> {
   value: T;
   events: {
     ref: (element: HTMLElement | null) => void;
-    onMouseDown: (event: React.MouseEvent<HTMLElement>) => void;
+    onPointerDown: (event: React.PointerEvent<HTMLElement>) => void;
   };
 }
