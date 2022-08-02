@@ -41,7 +41,13 @@ const Table = () => {
           <Header />
           <tbody>
             {results.map((item) => (
-              <tr key={item.key} {...item.events}>
+              <tr
+                key={item.key}
+                {...item.events}
+                className={css`
+                  transition: box-shadow 300ms, transform 300ms;
+                `}
+              >
                 <FirstCell>{item.value}</FirstCell>
                 <Cell>Cell Content</Cell>
                 <Cell>
