@@ -32,12 +32,6 @@ export const useDnDSort = <T>(defaultItems: T[]): DnDSortResult<T>[] => {
     dragStyle.cursor = "grabbing";
     dragStyle.transform = `translate(0, ${y}px) scale(1.1)`;
 
-    // const th = dragElement.element.querySelector("th");
-
-    // const thStyle = th?.style;
-
-    // if (thStyle) thStyle.position = "static";
-
     if (!state.canCheckHovered) return;
 
     // 確認できないようにする
