@@ -46,6 +46,7 @@ const Table = () => {
                 {...item.events}
                 className={css`
                   cursor: grab;
+                  position: relative;
                 `}
               >
                 <FirstCell>{item.value}</FirstCell>
