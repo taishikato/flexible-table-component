@@ -22,7 +22,6 @@ export const useDnDSort = <T>(defaultItems: T[]): DnDSortResult<T>[] => {
     if (!dragElement) return;
 
     // マウスポインターの移動量を計算
-    const x = clientX - pointerPosition.x;
     const y = clientY - pointerPosition.y;
 
     const dragStyle = dragElement.element.style;
@@ -30,7 +29,7 @@ export const useDnDSort = <T>(defaultItems: T[]): DnDSortResult<T>[] => {
     // ドラッグ要素の座標とスタイルを更新
     dragStyle.zIndex = "1";
     dragStyle.cursor = "grabbing";
-    dragStyle.transform = `translate(${x}px,${y}px)`;
+    dragStyle.transform = `translate(0,${y}px)`;
 
     // const th = dragElement.element.querySelector("th");
 
