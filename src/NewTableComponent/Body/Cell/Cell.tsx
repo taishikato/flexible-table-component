@@ -6,7 +6,6 @@ const Cell = ({ children }: { children: JSX.Element | string | number }) => {
     <td
       className={css`
         padding: 10px;
-        cursor: grab;
         vertical-align: middle;
         background-color: #ffffff;
         padding: 10px;

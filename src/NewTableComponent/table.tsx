@@ -45,6 +45,7 @@ const Table = () => {
                 key={item.key}
                 {...item.events}
                 className={css`
+                  cursor: grab;
                   transition: box-shadow 300ms, transform 300ms;
                 `}
               >
