@@ -4,7 +4,11 @@ import type { DnDSortResult } from "../../hooks/useDnDSort/types";
 import FirstCell from "./FirstCell/FirstCell";
 import Cell from "./Cell/Cell";
 
-const Row = ({ item }: { item: DnDSortResult<string> }) => {
+type Props<T> = {
+  item: DnDSortResult<T>;
+};
+
+const Row = <T extends string | number | JSX.Element>({ item }: Props<T>) => {
   return (
     <tr
       {...item.events}

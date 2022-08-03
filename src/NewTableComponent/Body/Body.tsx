@@ -2,7 +2,11 @@ import { memo } from "react";
 import type { DnDSortResult } from "../hooks/useDnDSort/types";
 import Row from "./Row/Row";
 
-const Body = ({ items }: { items: DnDSortResult<string>[] }) => {
+type Props<T> = {
+  items: DnDSortResult<T>[];
+};
+
+const Body = <T extends string | number | JSX.Element>({ items }: Props<T>) => {
   return (
     <tbody>
       {items.map((item) => (
