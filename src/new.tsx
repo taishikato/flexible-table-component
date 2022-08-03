@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 import { css } from "@emotion/css";
 import Table from "./NewTableComponent/table";
 
+// 並び替えしたい画像URLの配列
+const itemList: string[] = ["Row header 1", "Row header 2", "Row header 3"];
+
 const New = () => {
   return (
     <>
@@ -21,7 +24,7 @@ const New = () => {
           overflow-x: auto;
         `}
       >
-        <Table />
+        <Table itemList={itemList} />
       </div>
     </>
   );

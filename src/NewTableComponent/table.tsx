@@ -4,11 +4,8 @@ import { css } from "@emotion/css";
 import Header from "./Header/Header";
 import Body from "./Body/Body";
 
-// 並び替えしたい画像URLの配列
-const imageList: string[] = ["Row header 1", "Row header 2", "Row header 3"];
-
-const Table = () => {
-  const items = useDnDSort(imageList);
+const Table = ({ itemList }: { itemList: string[] }) => {
+  const items = useDnDSort(itemList);
 
   return (
     <>
