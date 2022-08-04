@@ -16,6 +16,7 @@ const Row = <T extends string | number | JSX.Element>({ item }: Props<T>) => {
         cursor: grab;
         position: relative;
       `}
+      onDragOver={(e) => e.preventDefault()}
     >
       <FirstCell>{item.value}</FirstCell>
       <Cell>Cell Content</Cell>
