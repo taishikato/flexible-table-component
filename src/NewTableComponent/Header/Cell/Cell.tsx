@@ -1,7 +1,7 @@
 import { memo } from "react";
 import { css } from "@emotion/css";
 
-const Cell = ({ children }: { children: JSX.Element | string | number }) => {
+const Cell = () => {
   return (
     <th
       className={css`
@@ -14,7 +14,7 @@ const Cell = ({ children }: { children: JSX.Element | string | number }) => {
         background-color: #ffffff;
       `}
     >
-      {children}
+      Header
     </th>
   );
 };

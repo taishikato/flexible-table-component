@@ -5,14 +5,10 @@ import Header from "./Header/Header";
 import Body from "./Body/Body";
 
 type Props<T> = {
-  data: any;
-  columns: any;
   itemList: T[];
 };
 
 const Table = <T extends string | number | JSX.Element>({
-  data,
-  columns,
   itemList,
 }: Props<T>) => {
   const items = useDnDSort<T>(itemList);
@@ -27,7 +23,7 @@ const Table = <T extends string | number | JSX.Element>({
         box-sizing: border-box;
       `}
     >
-      <Header columns={columns} />
+      <Header />
       <Body items={items} />
     </table>
   );
