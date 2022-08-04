@@ -82,9 +82,9 @@ export const useDnDSort = <T>(defaultItems: T[]): DnDSortResult<T>[] => {
 
     state.dragElement = null;
 
-    dragElement.element.removeEventListener("mouseup", onPointerUp);
+    dragElement.element.removeEventListener("pointerup", onPointerUp);
     // @ts-ignore
-    dragElement.element.removeEventListener("mousemove", onPointerMove);
+    dragElement.element.removeEventListener("pointermove", onPointerMove);
   };
 
   return items.map((value: T): DnDSortResult<T> => {
