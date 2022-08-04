@@ -83,7 +83,6 @@ export const useDnDSort = <T>(defaultItems: T[]): DnDSortResult<T>[] => {
     state.dragElement = null;
 
     dragElement.element.removeEventListener("pointerup", onPointerUp);
-    // @ts-ignore
     dragElement.element.removeEventListener("pointermove", onPointerMove);
   };
 
@@ -166,6 +165,8 @@ export const useDnDSort = <T>(defaultItems: T[]): DnDSortResult<T>[] => {
         onPointerDown: (event: React.PointerEvent<HTMLElement>) => {
           // ドラッグする要素
           const element = event.currentTarget;
+
+          element.setPointerCapture(event.pointerId);
 
           // マウスポインターの座標を保持しておく
           state.pointerPosition.x = event.clientX;
